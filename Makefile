@@ -4,25 +4,17 @@
 PWD=`pwd`
 
 
-all: bash-install vim-install
+all: bash vim
 
-clean: bash-uninstall vim-uninstall
-
-bash-install:
+bash:
 	@ln -fs ${PWD}/bash/bashrc ~/.bashrc
 	@ln -fs ${PWD}/bash/profile ~/.profile
 
-bash-uninstall:
-	-@rm -f ~/.bashrc
-	-@rm -f ~/.profile
-
-vim-install:
+vim:
 	@ln -fs ${PWD}/vim ~/.vim
 	@ln -fs ${PWD}/vim/vimrc ~/.vimrc
+	@git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+	@vim +BundleInstall +qall
 
-vim-uninstall:
-	-@rm -fr ~/.vim
-	-@rm -f ~/.vimrc
-
-.PHONY: all clean
+.PHONY: all
 
