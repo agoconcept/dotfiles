@@ -1,0 +1,52 @@
+" Vundle configuration
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+"
+" original repos on github
+Bundle 'scrooloose/nerdtree'
+
+Bundle 'scrooloose/syntastic'
+
+Bundle 'rodjek/vim-puppet'
+Bundle 'godlygeek/tabular'
+
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+Bundle "agoconcept/vim-snippets"
+
+" Github repos of the user 'vim-scripts'
+" => can omit the username part
+Bundle 'taglist.vim'
+
+" non github repos
+Bundle 'git://git.wincent.com/command-t.git'
+" ...
+
+filetype plugin indent on     " required!
+
+" SANTI
+
+syntax on
+set hlsearch
+set incsearch
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+set smartindent
+set ignorecase
+set smartcase
+set number
+set background=light
+match ErrorMsg '\s\+$'
+
