@@ -50,3 +50,7 @@ set number
 set background=light
 match ErrorMsg '\s\+$'
 
+" Init NERDTree at startup
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
+
