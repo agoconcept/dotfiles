@@ -106,7 +106,3 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-alias touchpadOn="synclient TouchpadOff=0"
-alias touchpadOff="synclient TouchpadOff=1"
-alias checkPuppet="watch -d -n 1 'ps auxwwf | grep sppuppet | grep -v grep'"
-

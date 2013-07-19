@@ -1,0 +1,4 @@
+alias touchpadOn="synclient TouchpadOff=0"
+alias touchpadOff="synclient TouchpadOff=1"
+alias checkPuppet="watch -d -n 1 'ps auxwwf | grep sppuppet | grep -v grep'"
+
