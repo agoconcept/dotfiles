@@ -17,6 +17,8 @@ Bundle 'jistr/vim-nerdtree-tabs'
 
 Bundle 'scrooloose/syntastic'
 
+Bundle 'ervandew/supertab'
+
 Bundle 'rodjek/vim-puppet'
 Bundle 'godlygeek/tabular'
 
