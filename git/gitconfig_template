@@ -1,0 +1,12 @@
+[core]
+    editor = vim
+    whitespace = trailing-space,space-before-tab,indent-with-non-tab
+    autocrlf = input
+    safecrlf = true
+[color]
+    ui = true
+[branch]
+    autosetuprebase = always
+[push]
+    default = tracking
+

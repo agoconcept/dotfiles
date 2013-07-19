@@ -1,0 +1,8 @@
+[init]
+    templatedir = ~/.git_template
+[user]
+    email = changeme@changeme.com
+    name = Santiago Gallego
+[include]
+    path = ~/.gitconfig_template
+

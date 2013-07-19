@@ -4,7 +4,7 @@
 PWD=`pwd`
 
 
-all: bash vim
+all: bash vim git
 
 bash:
 	@ln -fs ${PWD}/bash/bashrc ~/.bashrc
@@ -14,8 +14,14 @@ bash:
 vim:
 	@ln -fsn ${PWD}/vim/ ~/.vim
 	@ln -fs ${PWD}/vim/vimrc ~/.vimrc
-	-@git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+	-@[ -d ~/.vim/bundle/vundle ] || git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 	@vim +BundleInstall +qall
 
-.PHONY: all bash vim
+git:
+	@ln -fs ${PWD}/git/gitconfig ~/.gitconfig
+	@ln -fs ${PWD}/git/gitconfig_template ~/.gitconfig_template
+	@ln -fsn ${PWD}/git/git_template/ ~/.git_template
+	@echo "*** NOTE! Remember to config the email in the ~/.gitconfig file"
+
+.PHONY: all bash vim git
 
