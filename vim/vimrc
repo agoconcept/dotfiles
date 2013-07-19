@@ -13,6 +13,7 @@ Bundle 'gmarik/vundle'
 "
 " original repos on github
 Bundle 'scrooloose/nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
 
 Bundle 'scrooloose/syntastic'
 
@@ -80,4 +81,6 @@ function! NERDTreeQuit()
   endif
 endfunction
 autocmd WinEnter * call NERDTreeQuit()
+
+let g:nerdtree_tabs_open_on_console_startup=1
 
