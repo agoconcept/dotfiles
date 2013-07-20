@@ -37,8 +37,7 @@ Bundle 'taglist.vim'
 
 filetype plugin indent on     " required!
 
-" SANTI
-
+" Standard configuration
 syntax on
 set hlsearch
 set incsearch
@@ -53,6 +52,7 @@ set number
 set background=light
 match ErrorMsg '\s\+$'
 
+" Tabs configuration
 set showtabline=2
 
 " Init NERDTree at startup
@@ -85,4 +85,9 @@ endfunction
 autocmd WinEnter * call NERDTreeQuit()
 
 let g:nerdtree_tabs_open_on_console_startup=1
+
+" Allow paste mode with <F2> to avoid screwing indentation
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
 
