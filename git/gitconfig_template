@@ -11,4 +11,10 @@
     default = tracking
 [merge]
     conflictstyle = diff3
+[alias]
+    update = !bash -c 'git pull && \
+                       dir=`pwd` && \
+                       cd $(git rev-parse --show-toplevel) && \
+                       git submodule update --recursive --init && \
+                       cd $dir'
 
