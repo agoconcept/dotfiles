@@ -108,3 +108,7 @@ fi
 
 PS1="\n\[\033[35m\]\$(date +%d.%m.%Y)-\t\[\033[m\] - \[\033[32m\][\w]\[\033[0m\]\n\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h \[\033[m\]\$ "
 
+if [ -f /etc/bash_completion.d/git ] && ! shopt -oq posix; then
+    source /etc/bash_completion.d/git
+fi
+
