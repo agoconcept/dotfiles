@@ -16,6 +16,8 @@ Bundle 'scrooloose/syntastic'
 
 Bundle 'ervandew/supertab'
 
+Bundle 'majutsushi/tagbar'
+
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
@@ -24,9 +26,12 @@ Bundle "agoconcept/vim-snippets"
 Bundle 'rodjek/vim-puppet'
 Bundle 'godlygeek/tabular'
 
+Bundle 'mozilla/doctorjs'
+
 " Github repos of the user 'vim-scripts'
 " => can omit the username part
-Bundle 'taglist.vim'
+"Bundle 'taglist.vim'
+" ...
 
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
@@ -56,4 +61,7 @@ set showtabline=2
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
+
+" Toggle Tagbar with F8
+nmap <F8> :TagbarToggle<CR>
 
