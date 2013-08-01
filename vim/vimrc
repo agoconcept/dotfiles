@@ -27,6 +27,7 @@ Bundle 'rodjek/vim-puppet'
 Bundle 'godlygeek/tabular'
 
 Bundle 'mozilla/doctorjs'
+Bundle 'Rip-Rip/clang_complete'
 
 " Github repos of the user 'vim-scripts'
 " => can omit the username part
@@ -54,6 +55,9 @@ set number
 set background=light
 match ErrorMsg '\s\+$'
 
+" Allow mouse support
+set mouse=a
+
 " Tabs configuration
 set showtabline=2
 
@@ -62,6 +66,13 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
+" Search for tags file recursively in parent directories
+set tags=./tags;/
+
 " Toggle Tagbar with F8
 nmap <F8> :TagbarToggle<CR>
+
+" Navigate tags using C-\ and A-]
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
