@@ -12,9 +12,6 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 "
 " original repos on github
-Bundle 'scrooloose/nerdtree'
-Bundle 'jistr/vim-nerdtree-tabs'
-
 Bundle 'scrooloose/syntastic'
 
 Bundle 'ervandew/supertab'
@@ -54,37 +51,6 @@ match ErrorMsg '\s\+$'
 
 " Tabs configuration
 set showtabline=2
-
-" Init NERDTree at startup
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
-
-" Quit if NERDTree is the last buffer
-function! NERDTreeQuit()
-  redir => buffersoutput
-  silent buffers
-  redir END
-"                     1BufNo  2Mods.     3File           4LineNo
-  let pattern = '^\s*\(\d\+\)\(.....\) "\(.*\)"\s\+line \(\d\+\)$'
-  let windowfound = 0
-
-  for bline in split(buffersoutput, "\n")
-    let m = matchlist(bline, pattern)
-
-    if (len(m) > 0)
-      if (m[2] =~ '..a..')
-        let windowfound = 1
-      endif
-    endif
-  endfor
-
-  if (!windowfound)
-    quitall
-  endif
-endfunction
-autocmd WinEnter * call NERDTreeQuit()
-
-let g:nerdtree_tabs_open_on_console_startup=1
 
 " Allow paste mode with <F2> to avoid screwing indentation
 nnoremap <F2> :set invpaste paste?<CR>
