@@ -54,7 +54,7 @@ set smartindent
 set ignorecase
 set smartcase
 set number
-set background=light
+set background=dark
 match ErrorMsg '\s\+$'
 
 " Allow mouse support
