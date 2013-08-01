@@ -23,6 +23,8 @@ Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle "agoconcept/vim-snippets"
 
+Bundle "powerman/vim-plugin-autosess"
+
 Bundle 'rodjek/vim-puppet'
 Bundle 'godlygeek/tabular'
 
