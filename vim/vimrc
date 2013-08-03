@@ -12,22 +12,26 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 "
 " original repos on github
+" Syntax checking
 Bundle 'scrooloose/syntastic'
 
-Bundle 'ervandew/supertab'
-
+" Show ctags tagbar
 Bundle 'majutsushi/tagbar'
 
+" Snippets handling
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle "agoconcept/vim-snippets"
 
+" Store the session automatically when closing and restore it when opening
 Bundle "powerman/vim-plugin-autosess"
 
+" Plugins for handling puppet files
 Bundle 'rodjek/vim-puppet'
 Bundle 'godlygeek/tabular'
 
+" TODO: To be reviewed
 Bundle 'mozilla/doctorjs'
 Bundle 'Rip-Rip/clang_complete'
 
@@ -35,6 +39,8 @@ Bundle 'Rip-Rip/clang_complete'
 " => can omit the username part
 "Bundle 'taglist.vim'
 " ...
+" Show invisible characters with <F4>
+Bundle 'cream-showinvisibles'
 
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
@@ -55,7 +61,14 @@ set ignorecase
 set smartcase
 set number
 set background=dark
-match ErrorMsg '\s\+$'
+set t_Co=256
+
+" Highlight trailing whitespaces
+match Error '\s\+$'
+autocmd BufWinEnter * match Error /\s\+$/
+autocmd InsertEnter * match Error /\s\+\%#\@<!$/
+autocmd InsertLeave * match Error /\s\+$/
+autocmd BufWinLeave * call clearmatches()
 
 " Allow mouse support
 set mouse=a
@@ -68,13 +81,18 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
+" Toggle Tagbar with <F8>
+nmap <F8> :TagbarToggle<CR>
+
 " Search for tags file recursively in parent directories
 set tags=./tags;/
-
-" Toggle Tagbar with F8
-nmap <F8> :TagbarToggle<CR>
 
 " Navigate tags using C-\ and A-]
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+
+" Highlight all words like the one under the cursor
+autocmd CursorMoved * exe printf('2match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+
+colorscheme torte
 
