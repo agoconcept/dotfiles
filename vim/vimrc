@@ -50,6 +50,8 @@ filetype plugin indent on     " required!
 
 " Standard configuration
 syntax on
+colorscheme torte
+set t_Co=256
 set hlsearch
 set incsearch
 set tabstop=4
@@ -61,7 +63,12 @@ set ignorecase
 set smartcase
 set number
 set background=dark
-set t_Co=256
+
+" Allow mouse support
+set mouse=a
+
+" Highlight all words like the one under the cursor
+autocmd CursorMoved * exe printf('2match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 
 " Highlight trailing whitespaces
 match Error '\s\+$'
@@ -69,9 +76,6 @@ autocmd BufWinEnter * match Error /\s\+$/
 autocmd InsertEnter * match Error /\s\+\%#\@<!$/
 autocmd InsertLeave * match Error /\s\+$/
 autocmd BufWinLeave * call clearmatches()
-
-" Allow mouse support
-set mouse=a
 
 " Tabs configuration
 set showtabline=2
@@ -90,9 +94,4 @@ set tags=./tags;/
 " Navigate tags using C-\ and A-]
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-
-" Highlight all words like the one under the cursor
-autocmd CursorMoved * exe printf('2match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
-
-colorscheme torte
 
