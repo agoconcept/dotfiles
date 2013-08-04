@@ -4,7 +4,7 @@
 PWD=`pwd`
 
 
-all: bash vim git
+all: bash vim git jshint
 
 bash:
 	@ln -fs ${PWD}/bash/bashrc ~/.bashrc
@@ -23,5 +23,8 @@ git:
 	@ln -fsn ${PWD}/git/git_template/ ~/.git_template
 	@echo "*** NOTE! Remember to config the email in the ~/.gitconfig file"
 
-.PHONY: all bash vim git
+jshint:
+	@ln -fs ${PWD}/jshint/jshintrc ~/.jshint
+
+.PHONY: all bash vim git jshint
 
