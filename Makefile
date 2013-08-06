@@ -16,6 +16,8 @@ vim:
 	@ln -fs ${PWD}/vim/vimrc ~/.vimrc
 	-@[ -d ~/.vim/bundle/vundle ] || git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 	@vim +BundleInstall +qall
+	@sudo apt-get install ruby-dev
+	@cd ~/.vim/bundle/Command-T/ruby/command-t/ && ruby extconf.rb && make	# Prepares Command-T extension
 
 git:
 	@cp -f git/gitconfig ~/.gitconfig

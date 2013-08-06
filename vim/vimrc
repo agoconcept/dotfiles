@@ -15,6 +15,9 @@ Bundle 'gmarik/vundle'
 " Syntax checking
 Bundle 'scrooloose/syntastic'
 
+" Command-T
+Bundle "wincent/Command-T"
+
 " Show ctags tagbar
 Bundle 'majutsushi/tagbar'
 
@@ -33,6 +36,7 @@ Bundle 'godlygeek/tabular'
 
 " Improve javascript syntax highlight
 Bundle "jelera/vim-javascript-syntax"
+Bundle "digitaltoad/vim-jade"
 
 " Create tags automatically
 Bundle "xolox/vim-misc"
@@ -75,6 +79,12 @@ set smartindent
 set ignorecase
 set smartcase
 set number
+set scrolloff=2
+set wrap
+set linebreak
+set backspace=indent,eol,start
+set ruler
+set wildmenu
 set background=dark
 
 " Allow mouse support
