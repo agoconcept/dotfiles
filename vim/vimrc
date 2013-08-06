@@ -31,8 +31,21 @@ Bundle "powerman/vim-plugin-autosess"
 Bundle 'rodjek/vim-puppet'
 Bundle 'godlygeek/tabular'
 
+" Improve javascript syntax highlight
+Bundle "jelera/vim-javascript-syntax"
+
+" Create tags automatically
+Bundle "xolox/vim-misc"
+Bundle "xolox/vim-easytags"
+
+" ctrlp
+Bundle "kien/ctrlp.vim"
+
+" TODO: Javascript capabilities
+" Bundle 'mozilla/doctorjs'
+" Bundle "marijnh/tern_for_vim"
+
 " TODO: To be reviewed
-Bundle 'mozilla/doctorjs'
 Bundle 'Rip-Rip/clang_complete'
 
 " Github repos of the user 'vim-scripts'

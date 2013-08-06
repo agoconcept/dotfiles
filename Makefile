@@ -26,5 +26,8 @@ git:
 jshint:
 	@ln -fs ${PWD}/jshint/jshintrc ~/.jshint
 
-.PHONY: all bash vim git jshint
+jsctags: vim
+	@make ${PWD}/vim/bundle/jsctags/Makefile
+
+.PHONY: all bash vim git jshint jsctags
 
