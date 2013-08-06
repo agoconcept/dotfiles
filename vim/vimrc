@@ -27,6 +27,9 @@ Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle "agoconcept/vim-snippets"
 
+" ack-grep
+Bundle "mileszs/ack.vim"
+
 " Store the session automatically when closing and restore it when opening
 Bundle "powerman/vim-plugin-autosess"
 
@@ -41,9 +44,6 @@ Bundle "digitaltoad/vim-jade"
 " Create tags automatically
 Bundle "xolox/vim-misc"
 Bundle "xolox/vim-easytags"
-
-" ctrlp
-Bundle "kien/ctrlp.vim"
 
 " TODO: Javascript capabilities
 " Bundle 'mozilla/doctorjs'
@@ -79,7 +79,7 @@ set smartindent
 set ignorecase
 set smartcase
 set number
-set scrolloff=2
+set scrolloff=1
 set wrap
 set linebreak
 set backspace=indent,eol,start
