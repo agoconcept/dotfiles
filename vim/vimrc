@@ -45,11 +45,13 @@ Bundle "digitaltoad/vim-jade"
 Bundle "xolox/vim-misc"
 Bundle "xolox/vim-easytags"
 
-" TODO: Javascript capabilities
-" Bundle 'mozilla/doctorjs'
+" Show marks
+Bundle "kshenoy/vim-signature"
+
+" Javascript capabilities
 " Bundle "marijnh/tern_for_vim"
 
-" TODO: To be reviewed
+" Autocomplete C/C++ code
 Bundle 'Rip-Rip/clang_complete'
 
 " Github repos of the user 'vim-scripts'
