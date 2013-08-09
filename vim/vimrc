@@ -37,6 +37,9 @@ Bundle "powerman/vim-plugin-autosess"
 Bundle 'rodjek/vim-puppet'
 Bundle 'godlygeek/tabular'
 
+" Sets up node.js configuration
+Bundle "moll/vim-node"
+
 " Improve javascript syntax highlight
 Bundle "jelera/vim-javascript-syntax"
 Bundle "digitaltoad/vim-jade"
