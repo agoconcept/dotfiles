@@ -51,6 +51,9 @@ Bundle "xolox/vim-easytags"
 " Show marks
 Bundle "kshenoy/vim-signature"
 
+" Show differences from git repository
+Bundle 'airblade/vim-gitgutter'
+
 " Javascript capabilities
 " Bundle "marijnh/tern_for_vim"
 
