@@ -55,7 +55,7 @@ Bundle "kshenoy/vim-signature"
 Bundle 'airblade/vim-gitgutter'
 
 " Javascript capabilities
-" Bundle "marijnh/tern_for_vim"
+Bundle "marijnh/tern_for_vim"
 
 " Autocomplete C/C++ code
 Bundle 'Rip-Rip/clang_complete'
@@ -97,6 +97,9 @@ set background=dark
 
 " Allow mouse support
 set mouse=a
+
+" Make sure that the tagbar is opened at startup
+TagbarOpen
 
 " Highlight all words like the one under the cursor
 autocmd CursorMoved * exe printf('2match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
