@@ -4,7 +4,7 @@
 PWD=`pwd`
 
 
-all: bash vim git jshint
+all: bash vim git screen jshint jsctags
 
 bash:
 	@ln -fs ${PWD}/bash/bashrc ~/.bashrc
@@ -27,11 +27,14 @@ git:
 	@ln -fsn ${PWD}/git/git_template/ ~/.git_template
 	@echo "*** NOTE! Remember to config the email in the ~/.gitconfig file"
 
+screen:
+	@ln -fs ${PWD}/screen/screenrc ~/.screenrc
+
 jshint:
 	@ln -fs ${PWD}/jshint/jshintrc ~/.jshint
 
 jsctags: vim
 	@make ${PWD}/vim/bundle/jsctags/Makefile
 
-.PHONY: all bash vim git jshint jsctags
+.PHONY: all bash vim git screen jshint jsctags
 
