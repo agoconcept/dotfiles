@@ -98,8 +98,8 @@ set background=dark
 " Allow mouse support
 set mouse=a
 
-" Make sure that the tagbar is opened at startup
-TagbarOpen
+" Make sure that the tagbar is opened for supported files
+autocmd FileType * nested :call tagbar#autoopen(0)
 
 " Highlight all words like the one under the cursor
 autocmd CursorMoved * exe printf('2match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
