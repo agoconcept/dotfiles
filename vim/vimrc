@@ -31,7 +31,7 @@ Bundle "agoconcept/vim-snippets"
 Bundle "mileszs/ack.vim"
 
 " Store the session automatically when closing and restore it when opening
-Bundle "powerman/vim-plugin-autosess"
+"Bundle "powerman/vim-plugin-autosess"
 
 " Plugins for handling puppet files
 Bundle 'rodjek/vim-puppet'
