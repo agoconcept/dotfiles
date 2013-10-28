@@ -60,6 +60,8 @@ Bundle "marijnh/tern_for_vim"
 " Autocomplete C/C++ code
 Bundle 'Rip-Rip/clang_complete'
 
+" Multiple cursors
+Bundle "terryma/vim-multiple-cursors"
 " Github repos of the user 'vim-scripts'
 " => can omit the username part
 "Bundle 'taglist.vim'
