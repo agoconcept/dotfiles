@@ -80,7 +80,7 @@ filetype plugin indent on     " required!
 
 " Standard configuration
 syntax on
-colorscheme torte
+colorscheme zellner
 set t_Co=256
 set hlsearch
 set incsearch
