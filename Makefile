@@ -4,7 +4,7 @@
 PWD=`pwd`
 
 
-all: bash vim git screen tmux jshint jsctags
+all: bash vim git screen tmux jshint
 
 bash:
 	@ln -fs ${PWD}/bash/bashrc ~/.bashrc
@@ -37,8 +37,5 @@ tmux:
 jshint:
 	@ln -fs ${PWD}/jshint/jshintrc ~/.jshint
 
-jsctags: vim
-	@make ${PWD}/vim/bundle/jsctags/Makefile
-
-.PHONY: all bash vim git screen tmux jshint jsctags
+.PHONY: all bash vim git screen tmux jshint
 
