@@ -69,9 +69,6 @@ Bundle "terryma/vim-multiple-cursors"
 " Show invisible characters with <F4>
 Bundle 'cream-showinvisibles'
 
-" Allow shell inside vim
-Bundle "vim-scripts/Conque-Shell"
-
 " Molokai colorscheme
 Bundle "tomasr/molokai"
 
@@ -150,6 +147,7 @@ let g:molokai_original = 0
 colorscheme molokai
 
 " Set config for airline/powerline
+set laststatus=2
 let g:airline_powerline_fonts   = 1
 let g:airline_theme             = 'powerlineish'
 let g:airline_enable_branch     = 1
