@@ -72,6 +72,9 @@ Bundle 'cream-showinvisibles'
 " Allow shell inside vim
 Bundle "vim-scripts/Conque-Shell"
 
+" Molokai colorscheme
+Bundle "tomasr/molokai"
+
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
 " ...
@@ -80,8 +83,6 @@ filetype plugin indent on     " required!
 
 " Standard configuration
 syntax on
-colorscheme zellner
-set t_Co=256
 set hlsearch
 set incsearch
 set tabstop=4
@@ -98,7 +99,6 @@ set linebreak
 set backspace=indent,eol,start
 set ruler
 set wildmenu
-set background=dark
 
 " Allow mouse support
 set mouse=a
@@ -137,4 +137,10 @@ map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 " Navigate split windows and maximize them with Alt-<Up> and Alt-<Down>
 nmap <silent> <A-Up> :wincmd k<CR>:wincmd _<CR>
 nmap <silent> <A-Down> :wincmd j<CR>:wincmd _<CR>
+
+" Set colorscheme
+set t_Co=256
+let g:molokai_original=0
+colorscheme molokai
+set background=dark
 
