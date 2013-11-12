@@ -119,5 +119,7 @@ if [ -f /etc/bash_completion.d/git ] && ! shopt -oq posix; then
 fi
 
 # Needed for tmux to render all colors correctly
-export TERM=xterm-256color
+# Note that it works best when instead of defining it here
+# it's defined in the terminal emulator (e.g. konsole)
+#export TERM=xterm-256color
 
