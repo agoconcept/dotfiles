@@ -75,6 +75,10 @@ Bundle "vim-scripts/Conque-Shell"
 " Molokai colorscheme
 Bundle "tomasr/molokai"
 
+" Airline/powerline
+Bundle 'bling/vim-airline'
+Bundle 'Lokaltog/powerline-fonts'
+
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
 " ...
@@ -99,6 +103,7 @@ set linebreak
 set backspace=indent,eol,start
 set ruler
 set wildmenu
+set cursorline
 
 " Allow mouse support
 set mouse=a
@@ -140,7 +145,13 @@ nmap <silent> <A-Down> :wincmd j<CR>:wincmd _<CR>
 
 " Set colorscheme
 set t_Co=256
-let g:molokai_original=0
-colorscheme molokai
 set background=dark
+let g:molokai_original = 0
+colorscheme molokai
 
+" Set config for airline/powerline
+let g:airline_powerline_fonts   = 1
+let g:airline_theme             = 'powerlineish'
+let g:airline_enable_branch     = 1
+let g:airline_enable_syntastic  = 1
+let g:airline#extensions#tabline#enabled = 1

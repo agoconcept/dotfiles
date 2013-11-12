@@ -21,6 +21,9 @@ vim:
 	-@cd ~/.vim/bundle/Command-T/ruby/command-t/ && ruby extconf.rb && make	# Prepares Command-T extension
 	-@sudo apt-get install ack-grep
 	-@cd ~/.vim/bundle/tern_for_vim/ && sudo npm install
+	@mkdir -p ~/.fonts/
+	@ln -fs ${PWD}/vim/bundle/powerline-fonts/SourceCodePro/*.otf ~/.fonts/
+	@fc-cache -vf ~/.fonts
 
 git:
 	@cp -f git/gitconfig ~/.gitconfig
