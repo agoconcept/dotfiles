@@ -62,12 +62,6 @@ Bundle 'Rip-Rip/clang_complete'
 
 " Multiple cursors
 Bundle "terryma/vim-multiple-cursors"
-" Github repos of the user 'vim-scripts'
-" => can omit the username part
-"Bundle 'taglist.vim'
-" ...
-" Show invisible characters with <F4>
-Bundle 'cream-showinvisibles'
 
 " Molokai colorscheme
 Bundle "tomasr/molokai"
@@ -75,6 +69,13 @@ Bundle "tomasr/molokai"
 " Airline/powerline
 Bundle 'bling/vim-airline'
 Bundle 'Lokaltog/powerline-fonts'
+
+" Github repos of the user 'vim-scripts'
+" => can omit the username part
+"Bundle 'taglist.vim'
+" ...
+" Show invisible characters with <F4>
+Bundle 'cream-showinvisibles'
 
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
@@ -100,7 +101,6 @@ set linebreak
 set backspace=indent,eol,start
 set ruler
 set wildmenu
-set cursorline
 
 " Allow mouse support
 set mouse=a
@@ -117,6 +117,13 @@ autocmd BufWinEnter * match Error /\s\+$/
 autocmd InsertEnter * match Error /\s\+\%#\@<!$/
 autocmd InsertLeave * match Error /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+
+" Only set cursorline for the active window
+augroup CursorLine
+  au!
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  au WinLeave * setlocal nocursorline
+augroup END
 
 " Tabs configuration
 set showtabline=2
@@ -149,7 +156,7 @@ colorscheme molokai
 " Set config for airline/powerline
 set laststatus=2
 let g:airline_powerline_fonts   = 1
-let g:airline_theme             = 'powerlineish'
+let g:airline_theme             = 'molokai'
 let g:airline_enable_branch     = 1
 let g:airline_enable_syntastic  = 1
 let g:airline#extensions#tabline#enabled = 1
