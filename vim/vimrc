@@ -68,6 +68,7 @@ Bundle "tomasr/molokai"
 
 " Airline/powerline
 Bundle 'bling/vim-airline'
+Bundle 'Lokaltog/powerline'
 Bundle 'Lokaltog/powerline-fonts'
 
 " Git support
