@@ -128,7 +128,12 @@ settitle() {
 }
 
 ssh() {
+    if [[ $# == 0 || -z $TMUX ]]; then
+        command ssh $@
+        return
+    fi
     settitle "$*"
     command ssh "$@"
     settitle "bash"
 }
+
