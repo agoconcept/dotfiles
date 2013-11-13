@@ -22,9 +22,15 @@ vim:
 	-@sudo apt-get install ack-grep
 	-@cd ~/.vim/bundle/tern_for_vim/ && sudo npm install
 	@mkdir -p ~/.fonts/
-	@ln -fs ${PWD}/vim/bundle/powerline-fonts/SourceCodePro/*.otf ~/.fonts/
+	@ln -fs ${PWD}/vim/bundle/powerline-fonts/AnonymousPro/*.ttf ~/.fonts/
+	@ln -fs ${PWD}/vim/bundle/powerline-fonts/DejaVuSansMono/*.ttf ~/.fonts/
+	@ln -fs ${PWD}/vim/bundle/powerline-fonts/DroidSansMono/*.otf ~/.fonts/
 	@ln -fs ${PWD}/vim/bundle/powerline-fonts/Inconsolata/*.otf ~/.fonts/
 	@ln -fs ${PWD}/vim/bundle/powerline-fonts/InconsolataDz/*.otf ~/.fonts/
+	@ln -fs ${PWD}/vim/bundle/powerline-fonts/LiberationMono/*.ttf ~/.fonts/
+	@ln -fs ${PWD}/vim/bundle/powerline-fonts/Meslo/*.otf ~/.fonts/
+	@ln -fs ${PWD}/vim/bundle/powerline-fonts/SourceCodePro/*.otf ~/.fonts/
+	@ln -fs ${PWD}/vim/bundle/powerline-fonts/UbuntuMono/*.ttf ~/.fonts/
 	@fc-cache -vf ~/.fonts
 
 git:
