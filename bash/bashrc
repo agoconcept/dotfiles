@@ -119,5 +119,6 @@ if [ -f /etc/bash_completion.d/git ] && ! shopt -oq posix; then
 fi
 
 # Needed for tmux to render all colors correctly
-export TERM=screen-256color
+# Only set it after ssh'ing to remote hosts
+#export TERM=screen-256color
 
