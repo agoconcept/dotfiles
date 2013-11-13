@@ -23,6 +23,8 @@ vim:
 	-@cd ~/.vim/bundle/tern_for_vim/ && sudo npm install
 	@mkdir -p ~/.fonts/
 	@ln -fs ${PWD}/vim/bundle/powerline-fonts/SourceCodePro/*.otf ~/.fonts/
+	@ln -fs ${PWD}/vim/bundle/powerline-fonts/Inconsolata/*.otf ~/.fonts/
+	@ln -fs ${PWD}/vim/bundle/powerline-fonts/InconsolataDz/*.otf ~/.fonts/
 	@fc-cache -vf ~/.fonts
 
 git:
