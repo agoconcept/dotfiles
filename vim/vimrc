@@ -89,6 +89,7 @@ filetype plugin indent on     " required!
 
 " Standard configuration
 syntax on
+set encoding=utf-8
 set hlsearch
 set incsearch
 set tabstop=4
