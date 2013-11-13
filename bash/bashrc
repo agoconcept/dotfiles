@@ -122,3 +122,15 @@ fi
 # Only set it after ssh'ing to remote hosts
 #export TERM=screen-256color
 
+# ssh wrapper that rename current tmux window to the hostname of the
+# remote host.
+settitle() {
+    printf "\033k$1\033\\"
+}
+
+ssh() {
+    settitle "$*"
+    command ssh "$@"
+    settitle "bash"
+}
+
