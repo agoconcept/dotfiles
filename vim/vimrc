@@ -146,9 +146,9 @@ set tags=./tags;/
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
-" Navigate split windows and maximize them with Ctrl-<Up> and Ctrl-<Down>
-nmap <silent> <C-Up> :wincmd k<CR>:wincmd _<CR>
-nmap <silent> <C-Down> :wincmd j<CR>:wincmd _<CR>
+" Navigate split windows and maximize them with Alt-<Up> and Alt-<Down>
+nmap <silent> <A-Up> :wincmd k<CR>:wincmd _<CR>
+nmap <silent> <A-Down> :wincmd j<CR>:wincmd _<CR>
 
 " Set colorscheme
 set t_Co=256
@@ -166,4 +166,12 @@ let g:airline#extensions#tabline#enabled = 1
 
 " Avoid delays when pressing ESC
 set timeoutlen=1000 ttimeoutlen=0
+
+if &term =~ '^screen'
+  " tmux will send xterm-style keys when its xterm-keys option is on
+  execute "set <xUp>=\e[1;*A"
+  execute "set <xDown>=\e[1;*B"
+  execute "set <xRight>=\e[1;*C"
+  execute "set <xLeft>=\e[1;*D"
+endif
 
