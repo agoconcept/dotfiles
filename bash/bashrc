@@ -129,11 +129,11 @@ settitle() {
 
 ssh() {
     if [[ $# == 0 || -z $TMUX ]]; then
-        command ssh $@
-        return
+        command ssh "$@"
+    else
+        settitle "$*"       # TODO
+        command ssh "$@"
+        settitle "bash"
     fi
-    settitle "$*"
-    command ssh "$@"
-    settitle "bash"
 }
 
