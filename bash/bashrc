@@ -123,17 +123,14 @@ fi
 #export TERM=screen-256color
 
 # Rename current tmux window to the hostname of the remote host
-settitle() {
-    printf "\033k$1\033\\"
-}
-
 ssh() {
     if [[ $# == 0 || -z $TMUX ]]; then
         command ssh "$@"
     else
-        settitle "$*"       # TODO
+        last_param=${!#}
+        tmux rename-window -- "${last_param}"
         command ssh "$@"
-        settitle "bash"
+        tmux set-window-option automatic-rename "on" 1> /dev/null
     fi
 }
 
