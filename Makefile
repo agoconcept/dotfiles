@@ -4,7 +4,7 @@
 PWD=`pwd`
 
 
-all: bash vim git screen tmux jshint
+all: bash vim git screen tmux konsole jshint
 
 bash:
 	@ln -fs ${PWD}/bash/bashrc ~/.bashrc
@@ -45,8 +45,11 @@ screen:
 tmux:
 	@ln -fs ${PWD}/tmux/tmux.conf ~/.tmux.conf
 
+konsole:
+	@ln -fs ${PWD}/konsole/tmux.profile ~/.kde/share/apps/konsole/tmux.profile
+
 jshint:
 	@ln -fs ${PWD}/jshint/jshintrc ~/.jshint
 
-.PHONY: all bash vim git screen tmux jshint
+.PHONY: all bash vim git screen tmux konsole jshint
 
