@@ -49,6 +49,7 @@ tmux:
 
 konsole:
 	@ln -fs ${PWD}/konsole/tmux.profile ~/.kde/share/apps/konsole/tmux.profile
+	@ln -fs ${PWD}/konsole/DarkPastels.colorscheme ~/.kde/share/apps/konsole/DarkPastels.colorscheme
 
 jshint:
 	@ln -fs ${PWD}/jshint/jshintrc ~/.jshint
