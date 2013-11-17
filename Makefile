@@ -44,6 +44,7 @@ screen:
 	@ln -fs ${PWD}/screen/screenrc ~/.screenrc
 
 tmux:
+	-@[ -d ${PWD}/powerline ] || git clone https://github.com/Lokaltog/powerline ${PWD}/powerline
 	@ln -fs ${PWD}/tmux/tmux.conf ~/.tmux.conf
 
 konsole:
