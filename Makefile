@@ -21,6 +21,7 @@ vim:
 	-@cd ~/.vim/bundle/Command-T/ruby/command-t/ && ruby extconf.rb && make	# Prepares Command-T extension
 	-@sudo apt-get install ack-grep
 	-@cd ~/.vim/bundle/tern_for_vim/ && sudo npm install
+	-@sudo apt-get install fontconfig
 	@mkdir -p ~/.fonts/
 	@ln -fs ${PWD}/vim/bundle/powerline-fonts/AnonymousPro/*.ttf ~/.fonts/
 	@ln -fs ${PWD}/vim/bundle/powerline-fonts/DejaVuSansMono/*.ttf ~/.fonts/
