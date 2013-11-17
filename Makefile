@@ -3,7 +3,6 @@
 # Current directory
 PWD=`pwd`
 
-
 all: bash vim git screen tmux konsole jshint
 
 bash:
@@ -46,6 +45,7 @@ screen:
 tmux:
 	-@[ -d ${PWD}/powerline ] || git clone https://github.com/Lokaltog/powerline ${PWD}/powerline
 	@ln -fs ${PWD}/tmux/tmux.conf ~/.tmux.conf
+	-@cd ${PWD}/powerline/ && sudo python setup.py install
 
 konsole:
 	@ln -fs ${PWD}/konsole/tmux.profile ~/.kde/share/apps/konsole/tmux.profile
