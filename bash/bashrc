@@ -128,3 +128,16 @@ settitle() {
 }
 
 test -z $TMUX && settitle $(hostname)
+
+# Rename current tmux window to the hostname of the remote host
+ssh() {
+    if [[ $# == 0 || -z $TMUX ]]; then
+        command ssh "$@"
+    else
+        last_param=${!#}
+        tmux rename-window -- "${last_param}"
+        command ssh "$@"
+        tmux set-window-option automatic-rename "on" 1> /dev/null
+    fi
+}
+
