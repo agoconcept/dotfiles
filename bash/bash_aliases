@@ -1,5 +1,8 @@
 alias ack=ack-grep
 alias touchpadOn="synclient TouchpadOff=0"
 alias touchpadOff="synclient TouchpadOff=1"
-alias checkPuppet="watch -d -n 1 'ps auxwwf | grep sppuppet | grep -v grep'"
 alias git-diff="git difftool --tool=meld"
+
+# SPOTIFY
+alias checkPuppet="watch -d -n 1 'ps auxwwf | grep sppuppet | grep -v grep'"
+alias vpn="cd ~/git/openvpn-configs/ && sudo openvpn --cd ~/git/openvpn-configs/ --config jump1.ash-udp.conf"
