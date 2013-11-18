@@ -122,15 +122,9 @@ fi
 # Only set it after ssh'ing to remote hosts
 #export TERM=screen-256color
 
-# Rename current tmux window to the hostname of the remote host
-ssh() {
-    if [[ $# == 0 || -z $TMUX ]]; then
-        command ssh "$@"
-    else
-        last_param=${!#}
-        tmux rename-window -- "${last_param}"
-        command ssh "$@"
-        tmux set-window-option automatic-rename "on" 1> /dev/null
-    fi
+# When logging in remote hosts set the window title to the hostname
+settitle() {
+        printf "\033k$1\033\\"
 }
 
+test -z $TMUX && settitle $(hostname)
