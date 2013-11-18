@@ -1,7 +1,7 @@
 [Appearance]
 AntiAliasFonts=true
 BoldIntense=false
-ColorScheme=DarkPastels
+ColorScheme=WhiteOnBlack
 Font=Source Code Pro for Powerline,10,-1,5,63,0,0,0,0,0
 
 [General]
