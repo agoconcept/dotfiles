@@ -116,12 +116,12 @@ autocmd FileType * nested :call tagbar#autoopen(0)
 autocmd CursorMoved * exe printf('2match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 
 " Highlight trailing whitespaces
-highlight Trailing ctermbg=red guibg=red
-autocmd ColorScheme * highlight Trailing ctermbg=red guibg=red
-match Trailing '\s\+$'
-autocmd BufWinEnter * match Trailing /\s\+$/
-autocmd InsertEnter * match Trailing /\s\+\%#\@<!$/
-autocmd InsertLeave * match Trailing /\s\+$/
+highlight Error ctermbg=red ctermfg=white guibg=red guifg=white
+autocmd ColorScheme * highlight Error ctermbg=red ctermfg=white guibg=red guifg=white
+match Error '\s\+$'
+autocmd BufWinEnter * match Error /\s\+$/
+autocmd InsertEnter * match Error /\s\+\%#\@<!$/
+autocmd InsertLeave * match Error /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
 " Only set cursorline for the active window
