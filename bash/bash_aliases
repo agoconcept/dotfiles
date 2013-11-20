@@ -2,6 +2,7 @@ alias ack=ack-grep
 alias touchpadOn="synclient TouchpadOff=0"
 alias touchpadOff="synclient TouchpadOff=1"
 alias git-diff="git difftool --tool=meld"
+alias pdb="python -m pdb"
 
 # SPOTIFY
 alias checkPuppet="watch -d -n 1 'ps auxwwf | grep sppuppet | grep -v grep'"
