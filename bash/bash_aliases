@@ -6,4 +6,4 @@ alias pdb="python -m pdb"
 
 # SPOTIFY
 alias checkPuppet="watch -d -n 1 'ps auxwwf | grep sppuppet | grep -v grep'"
-alias vpn="cd ~/git/openvpn-configs/ && sudo openvpn --cd ~/git/openvpn-configs/ --config jump1.ash-udp.conf"
+alias vpn="cd ~/git/openvpn-configs/ && sudo openvpn --cd ~/git/openvpn-configs/ --config jump1.ash-udp.conf && cd -"
