@@ -14,6 +14,7 @@ vim:
 	@ln -fsn ${PWD}/vim/ ~/.vim
 	@ln -fs ${PWD}/vim/vimrc ~/.vimrc
 	@ln -fs ${PWD}/vim/gvimrc ~/.gvimrc
+	@ln -fs ${PWD}/vim/pdbrc ~/.pdbrc
 	-@[ -d ~/.vim/bundle/vundle ] || git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 	@vim +BundleInstall +qall
 	-@sudo apt-get install exuberant-ctags
