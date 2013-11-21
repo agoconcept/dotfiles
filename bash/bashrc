@@ -141,3 +141,19 @@ ssh() {
     fi
 }
 
+# Rename current tmux window to the sudo'ed command
+sudo() {
+    if [[ $# == 0 || -z $TMUX ]]; then
+        command sudo "$@"
+    else
+        if [[ $1 = "-"* ]]; then
+            name="sudo $@"
+        else
+            name=$1
+        fi
+        tmux rename-window -- "${name}"
+        command sudo "$@"
+        tmux set-window-option automatic-rename "on" 1> /dev/null
+    fi
+}
+
