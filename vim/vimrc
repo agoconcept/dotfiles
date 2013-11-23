@@ -121,6 +121,9 @@ set wildmenu
 " Allow mouse support
 set mouse=a
 
+" Remap leader key
+let mapleader = ","
+
 " Make sure that the tagbar is opened for supported files
 autocmd FileType * nested :call tagbar#autoopen(0)
 
