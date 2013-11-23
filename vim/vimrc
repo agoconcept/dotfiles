@@ -202,3 +202,6 @@ cmap w!! w !sudo tee > /dev/null %
 " Map <F5> to the undo
 nnoremap <F5> :GundoToggle<CR>
 
+" Map tasklist
+map <F6> :TaskList<CR>
+
