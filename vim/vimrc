@@ -82,6 +82,9 @@ Bundle 'ervandew/supertab'
 " gundo
 Bundle 'sjl/gundo.vim'
 
+" tasklist
+Bundle 'vim-scripts/TaskList.vim'
+
 " Github repos of the user 'vim-scripts'
 " => can omit the username part
 "Bundle 'taglist.vim'
