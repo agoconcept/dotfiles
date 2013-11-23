@@ -21,7 +21,7 @@ vim:
 	-@sudo apt-get install ruby-dev
 	-@cd ~/.vim/bundle/Command-T/ruby/command-t/ && ruby extconf.rb && make	# Prepares Command-T extension
 	-@sudo apt-get install ack-grep
-	-@cd ~/.vim/bundle/tern_for_vim/ && sudo npm install
+	#-@cd ~/.vim/bundle/tern_for_vim/ && sudo npm install
 	-@sudo easy_install vimpdb
 	-@sudo apt-get install fontconfig
 	@mkdir -p ~/.fonts/

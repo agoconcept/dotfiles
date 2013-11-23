@@ -58,7 +58,7 @@ Bundle "kshenoy/vim-signature"
 Bundle 'airblade/vim-gitgutter'
 
 " Javascript capabilities
-Bundle "marijnh/tern_for_vim"
+"Bundle "marijnh/tern_for_vim"
 
 " Autocomplete C/C++ code
 Bundle 'Rip-Rip/clang_complete'
