@@ -85,6 +85,9 @@ Bundle 'sjl/gundo.vim'
 " tasklist
 Bundle 'vim-scripts/TaskList.vim'
 
+" rope for vim
+Bundle 'sontek/rope-vim'
+
 " Github repos of the user 'vim-scripts'
 " => can omit the username part
 "Bundle 'taglist.vim'
@@ -204,4 +207,8 @@ nnoremap <F5> :GundoToggle<CR>
 
 " Map tasklist
 map <F6> :TaskList<CR>
+
+" Rope shortcuts
+map <leader>j :RopeGotoDefinition<CR>
+map <leader>r :RopeRename<CR>
 
