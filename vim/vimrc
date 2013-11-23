@@ -15,6 +15,9 @@ Bundle 'gmarik/vundle'
 " Syntax checking
 Bundle 'scrooloose/syntastic'
 
+" netrw
+Bundle "vim-scripts/netrw.vim"
+
 " Command-T
 Bundle "wincent/Command-T"
 
