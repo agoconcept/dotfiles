@@ -3,7 +3,7 @@
 # Current directory
 PWD=`pwd`
 
-all: bash vim git screen tmux konsole jshint
+all: bash vim git tmux konsole jshint
 
 bash:
 	@ln -fs ${PWD}/bash/bashrc ~/.bashrc
@@ -42,9 +42,6 @@ git:
 	@ln -fsn ${PWD}/git/git_template/ ~/.git_template
 	@echo "*** NOTE! Remember to config the email in the ~/.gitconfig file"
 
-screen:
-	@ln -fs ${PWD}/screen/screenrc ~/.screenrc
-
 tmux:
 	-@[ -d ${PWD}/powerline ] || git clone https://github.com/Lokaltog/powerline ${PWD}/powerline
 	@ln -fs ${PWD}/tmux/tmux.conf ~/.tmux.conf
@@ -58,5 +55,5 @@ konsole:
 jshint:
 	@ln -fs ${PWD}/jshint/jshintrc ~/.jshint
 
-.PHONY: all bash vim git screen tmux konsole jshint
+.PHONY: all bash vim git tmux konsole jshint
 
