@@ -1,0 +1,6 @@
+Host jump-sto
+    Hostname jump1.sto.spotify.net
+
+Host jump-lon
+    Hostname jump1.lon.spotify.net
+

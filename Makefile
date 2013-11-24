@@ -3,7 +3,7 @@
 # Current directory
 PWD=`pwd`
 
-all: bash vim git tmux konsole jshint
+all: bash vim git tmux ssh konsole jshint
 
 bash:
 	@ln -fs ${PWD}/bash/bashrc ~/.bashrc
@@ -47,6 +47,9 @@ tmux:
 	@ln -fs ${PWD}/tmux/tmux.conf ~/.tmux.conf
 	-@cd ${PWD}/powerline/ && sudo python setup.py install
 
+ssh:
+	@ln -fs ${PWD}/ssh/config ~/.ssh/config
+
 konsole:
 	@ln -fs ${PWD}/konsole/tmux.profile ~/.kde/share/apps/konsole/tmux.profile
 	@ln -fs ${PWD}/konsole/DarkPastels.colorscheme ~/.kde/share/apps/konsole/DarkPastels.colorscheme
@@ -55,5 +58,5 @@ konsole:
 jshint:
 	@ln -fs ${PWD}/jshint/jshintrc ~/.jshint
 
-.PHONY: all bash vim git tmux konsole jshint
+.PHONY: all bash vim git tmux ssh konsole jshint
 
