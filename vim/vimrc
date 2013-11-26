@@ -130,8 +130,24 @@ let mapleader = ","
 " Make sure that the tagbar is opened for supported files
 autocmd FileType * nested :call tagbar#autoopen(0)
 
-" Highlight all words like the one under the cursor
-autocmd CursorMoved * exe printf('2match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+" Highlight all words like the one under the cursor (toggle with F10)
+" Adapted from http://stackoverflow.com/questions/15999958/can-an-autocmd-be-turned-on-off
+let g:toggleHighlight = 0
+function! ToggleHighlight(...)
+  if a:0 == 1 " Toggle behaviour
+    let g:toggleHighlight = 1 - g:toggleHighlight
+  endif
+
+  if g:toggleHighlight == 0 " Normal action, highlight
+    silent! exe printf('2match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+  else
+    " Clear the matches
+    call clearmatches()
+  endif
+endfunction
+
+autocmd CursorMoved * call ToggleHighlight()
+map <F10> :call ToggleHighlight(1)<CR>
 
 " Highlight trailing whitespaces
 highlight Error ctermbg=red ctermfg=white guibg=red guifg=white
