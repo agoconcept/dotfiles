@@ -157,3 +157,6 @@ sudo() {
     fi
 }
 
+# Disable possible timeout
+TMOUT=
+
