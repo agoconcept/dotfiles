@@ -149,6 +149,9 @@ endfunction
 autocmd CursorMoved * call ToggleHighlight()
 map <F10> :call ToggleHighlight(1)<CR>
 
+" Start with automatic highlighting of current word disabled
+call ToggleHighlight(1)
+
 " Highlight trailing whitespaces
 highlight Error ctermbg=red ctermfg=white guibg=red guifg=white
 autocmd ColorScheme * highlight Error ctermbg=red ctermfg=white guibg=red guifg=white
