@@ -142,11 +142,12 @@ function! ToggleHighlight(...)
     silent! exe printf('2match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
   else
     " Clear the matches
-    call clearmatches()
+    silent! exe printf('2match IncSearch //', escape(expand('<cword>'), '/\'))
   endif
 endfunction
 
-autocmd CursorMoved * call ToggleHighlight()
+autocmd WinEnter,CursorMoved * call ToggleHighlight()
+autocmd WinLeave * 2match IncSearch //
 map <F10> :call ToggleHighlight(1)<CR>
 
 " Start with automatic highlighting of current word disabled
@@ -156,10 +157,10 @@ call ToggleHighlight(1)
 highlight Error ctermbg=red ctermfg=white guibg=red guifg=white
 autocmd ColorScheme * highlight Error ctermbg=red ctermfg=white guibg=red guifg=white
 match Error '\s\+$'
-autocmd BufWinEnter * match Error /\s\+$/
+autocmd WinEnter,BufWinEnter * match Error /\s\+$/
 autocmd InsertEnter * match Error /\s\+\%#\@<!$/
 autocmd InsertLeave * match Error /\s\+$/
-autocmd BufWinLeave * call clearmatches()
+autocmd WinLeave,BufWinLeave * match Error //
 
 " Only set cursorline for the active window
 augroup CursorLine
