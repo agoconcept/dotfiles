@@ -37,7 +37,7 @@ vim:
 	@fc-cache -vf ~/.fonts
 
 git:
-	@cp -f git/gitconfig ~/.gitconfig
+	@ln -fs ${PWD}/git/gitconfig ~/.gitconfig
 	@ln -fs ${PWD}/git/gitconfig_template ~/.gitconfig_template
 	@ln -fsn ${PWD}/git/git_template/ ~/.git_template
 	@echo "*** NOTE! Remember to config the email in the ~/.gitconfig file"
