@@ -22,3 +22,20 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
+
+mountRemoteNFS() {
+    mount | grep "$1" 2>&1 > /dev/null
+    if [ $? -ne 0 ]
+    then
+        sudo mount "$2" "$1" && echo "Mounted successfully: $1" || echo "Error while mounting: $1"
+    else
+        echo "Already mounted: $1"
+    fi
+}
+
+m() {
+    mountRemoteNFS /mnt/agoconcept 192.168.0.102:/var/lib/mldonkey/incoming/files
+    mountRemoteNFS /mnt/HDD-ext 192.168.0.102:/mnt/HDD-ext
+    mountRemoteNFS /mnt/Elements 192.168.0.102:/mnt/Elements
+}
+
