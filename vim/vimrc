@@ -129,7 +129,7 @@ set mouse=a
 let mapleader = ","
 
 " Make sure that the tagbar is opened for supported files
-autocmd FileType * nested :call tagbar#autoopen(0)
+"autocmd FileType * nested :call tagbar#autoopen(0)
 
 " Highlight all words like the one under the cursor (toggle with F10)
 " Adapted from http://stackoverflow.com/questions/15999958/can-an-autocmd-be-turned-on-off
