@@ -12,17 +12,19 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 "
 " original repos on github
-" Syntax checking
-Bundle 'scrooloose/syntastic'
 
-" netrw
-Bundle "vim-scripts/netrw.vim"
+" Molokai colorscheme
+Bundle "tomasr/molokai"
+
+" Airline/powerline
+Bundle 'bling/vim-airline'
+Bundle 'Lokaltog/powerline-fonts'
 
 " Ctrl-P
 Bundle "kien/ctrlp.vim"
 
-" Show ctags tagbar
-Bundle 'majutsushi/tagbar'
+" supertab
+Bundle 'ervandew/supertab'
 
 " Snippets handling
 Bundle "MarcWeber/vim-addon-mw-utils"
@@ -33,12 +35,42 @@ Bundle "agoconcept/vim-snippets"
 " ack-grep
 Bundle "mileszs/ack.vim"
 
+" Multiple cursors
+Bundle "terryma/vim-multiple-cursors"
+
+" Show marks
+Bundle "kshenoy/vim-signature"
+
+" gundo
+Bundle 'sjl/gundo.vim'
+
+" netrw
+Bundle "vim-scripts/netrw.vim"
+
 " Store the session automatically when closing and restore it when opening
 "Bundle "powerman/vim-plugin-autosess"
 
-" Plugins for handling puppet files
-Bundle 'rodjek/vim-puppet'
-Bundle 'godlygeek/tabular'
+" tasklist
+Bundle 'vim-scripts/TaskList.vim'
+
+" Git support
+Bundle 'tpope/vim-fugitive'
+
+" Show differences from git repository
+Bundle 'airblade/vim-gitgutter'
+
+" Syntax checking
+Bundle 'scrooloose/syntastic'
+
+" Create tags automatically
+Bundle "xolox/vim-misc"
+Bundle "xolox/vim-easytags"
+
+" Show ctags tagbar
+Bundle 'majutsushi/tagbar'
+
+" Autocomplete C/C++ code
+Bundle 'Rip-Rip/clang_complete'
 
 " Sets up node.js configuration
 Bundle "moll/vim-node"
@@ -47,46 +79,15 @@ Bundle "moll/vim-node"
 Bundle "jelera/vim-javascript-syntax"
 Bundle "digitaltoad/vim-jade"
 
-" Create tags automatically
-Bundle "xolox/vim-misc"
-Bundle "xolox/vim-easytags"
-
-" Show marks
-Bundle "kshenoy/vim-signature"
-
-" Show differences from git repository
-Bundle 'airblade/vim-gitgutter'
-
 " Javascript capabilities
 "Bundle "marijnh/tern_for_vim"
 
-" Autocomplete C/C++ code
-Bundle 'Rip-Rip/clang_complete'
-
-" Multiple cursors
-Bundle "terryma/vim-multiple-cursors"
-
-" Molokai colorscheme
-Bundle "tomasr/molokai"
-
-" Airline/powerline
-Bundle 'bling/vim-airline'
-Bundle 'Lokaltog/powerline-fonts'
-
-" Git support
-Bundle 'tpope/vim-fugitive'
-
-" supertab
-Bundle 'ervandew/supertab'
-
-" gundo
-Bundle 'sjl/gundo.vim'
-
-" tasklist
-Bundle 'vim-scripts/TaskList.vim'
-
 " rope for vim
 Bundle 'sontek/rope-vim'
+
+" Plugins for handling puppet files
+Bundle 'rodjek/vim-puppet'
+Bundle 'godlygeek/tabular'
 
 " Github repos of the user 'vim-scripts'
 " => can omit the username part
@@ -101,37 +102,107 @@ Bundle 'cream-showinvisibles'
 
 filetype plugin indent on     " required!
 
-" Standard configuration
+" Enable syntax highlighting
 syntax on
+
+" Enable UTF-8 encoding
 set encoding=utf-8
-set hlsearch
-set incsearch
-set tabstop=4
-set shiftwidth=4
-set shiftround
-set expandtab
-set autoindent
-set smartindent
-set ignorecase
-set smartcase
+
+" Show line numbers
 set number
-set scrolloff=1
-set wrap
-set linebreak
-set backspace=indent,eol,start
+
+" Show ruler
 set ruler
+
+" Define scroll offset
+set scrolloff=1
+
+" Tabs configuration
+set showtabline=2
+
+" Allow command completion
 set wildmenu
 
 " Allow mouse support
 set mouse=a
 
+" Backspace can delete indent, eol and line start
+set backspace=indent,eol,start
+
+" Define wrap line text
+set wrap
+
+" Allow breaking lines
+set linebreak
+
+" Number of spaces for tabs
+set tabstop=4
+
+" Number of spaces for each step of autoindent
+set shiftwidth=4
+
+" Round indent to multiples of shiftwidth
+set shiftround
+
+" Expand tabs to spaces
+set expandtab
+
+" Copy indentation of current line when starting a new line
+set autoindent
+
+" Do smart autoindenting
+set smartindent
+
+" Enable highlighting search results
+set hlsearch
+
+" Enable progressive search results
+set incsearch
+
+" Ignore case in search patterns
+set ignorecase
+
+" Use smart case pattern matching
+set smartcase
+
+" Search for tags file recursively in parent directories
+set tags=./tags;/
+
+" Avoid delays when pressing ESC
+set timeoutlen=1000 ttimeoutlen=0
+
 " Remap leader key
 let mapleader = ","
 
-" Make sure that the tagbar is opened for supported files
-"autocmd FileType * nested :call tagbar#autoopen(0)
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
 
-" Highlight all words like the one under the cursor (toggle with F10)
+""" COLORS AND LOOK'N'FEEL
+" Set colorscheme
+set t_Co=256
+set background=dark
+let g:molokai_original = 1
+let g:rehash256 = 1
+colorscheme molokai
+
+" Set config for airline/powerline
+set laststatus=2
+let g:airline_powerline_fonts   = 1
+let g:airline_theme             = 'molokai'
+let g:airline_enable_branch     = 1
+let g:airline_enable_syntastic  = 1
+let g:airline#extensions#tabline#enabled = 1
+
+if &term =~ '^screen'
+  " tmux will send xterm-style keys when its xterm-keys option is on
+  execute "set <xUp>=\e[1;*A"
+  execute "set <xDown>=\e[1;*B"
+  execute "set <xRight>=\e[1;*C"
+  execute "set <xLeft>=\e[1;*D"
+endif
+
+""" HIGHLIGHTING
+" Highlight all words like the one under the cursor
 " Adapted from http://stackoverflow.com/questions/15999958/can-an-autocmd-be-turned-on-off
 let g:toggleHighlight = 0
 function! ToggleHighlight(...)
@@ -149,7 +220,6 @@ endfunction
 
 autocmd WinEnter,CursorMoved * call ToggleHighlight()
 autocmd WinLeave * 2match IncSearch //
-map <F10> :call ToggleHighlight(1)<CR>
 
 " Start with automatic highlighting of current word disabled
 call ToggleHighlight(1)
@@ -163,75 +233,47 @@ autocmd InsertEnter * match Error /\s\+\%#\@<!$/
 autocmd InsertLeave * match Error /\s\+$/
 autocmd WinLeave,BufWinLeave * match Error //
 
-" Only set cursorline for the active window
+" Set cursorline (only for the active window)
 augroup CursorLine
   au!
   au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
   au WinLeave * setlocal nocursorline
 augroup END
 
-" Tabs configuration
-set showtabline=2
-
-" Allow paste mode with <F2> to avoid screwing indentation
-nnoremap <F2> :set invpaste paste?<CR>
-set pastetoggle=<F2>
-set showmode
-
-" Toggle Tagbar with <F8>
-nmap <F8> :TagbarToggle<CR>
-
-" Search for tags file recursively in parent directories
-set tags=./tags;/
-
-" Navigate tags using C-\ and A-]
-map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-
+""" NAVIGATION
 " Navigate split windows and maximize them with Alt-<Up> and Alt-<Down>
 nmap <silent> <A-Up> :wincmd k<CR>:wincmd _<CR>
 nmap <silent> <A-Down> :wincmd j<CR>:wincmd _<CR>
 
-" Set colorscheme
-set t_Co=256
-set background=dark
-let g:molokai_original = 1
-let g:rehash256 = 1
-colorscheme molokai
-
-" Set config for airline/powerline
-set laststatus=2
-let g:airline_powerline_fonts   = 1
-let g:airline_theme             = 'molokai'
-let g:airline_enable_branch     = 1
-let g:airline_enable_syntastic  = 1
-let g:airline#extensions#tabline#enabled = 1
-
-" Avoid delays when pressing ESC
-set timeoutlen=1000 ttimeoutlen=0
-
-if &term =~ '^screen'
-  " tmux will send xterm-style keys when its xterm-keys option is on
-  execute "set <xUp>=\e[1;*A"
-  execute "set <xDown>=\e[1;*B"
-  execute "set <xRight>=\e[1;*C"
-  execute "set <xLeft>=\e[1;*D"
-endif
-
-" Allow saving of files as sudo when I forgot to start vim using sudo.
-cmap w!! w !sudo tee > /dev/null %
-
-" Map <F5> to the undo
-nnoremap <F5> :GundoToggle<CR>
-
-" Map tasklist
-map <F6> :TaskList<CR>
+" Navigate tags using C-\ and A-]
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 " Rope shortcuts
 map <leader>j :RopeGotoDefinition<CR>
 map <leader>r :RopeRename<CR>
 
 " shortcuts for diffing files
-nnoremap <Leader>gd :Gdiff<cr> " open vimdiff for current file and git head (fugitive extension)
-nnoremap <Leader>gD :diffoff!<cr><c-w>o<cr> " switch back to current file and closes fugitive buffer
+nnoremap <leader>gd :Gdiff<cr> " open vimdiff for current file and git head (fugitive extension)
+nnoremap <leader>gD :diffoff!<cr><c-w>o<cr> " switch back to current file and closes fugitive buffer
+
+""" REMAP some F-keys
+" F2: Toggle paste mode to avoid screwing indentation
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
+
+" F5: Toggle gundo
+nnoremap <F5> :GundoToggle<CR>
+
+" F6: Toggle tasklist
+map <F6> :TaskList<CR>
+
+" F8: Toggle Tagbar
+nmap <F8> :TagbarToggle<CR>
+" Make sure that the tagbar is opened for supported files
+"autocmd FileType * nested :call tagbar#autoopen(0)
+
+" F10: Toggle highlighting all matches of current word
+map <F10> :call ToggleHighlight(1)<CR>
 
