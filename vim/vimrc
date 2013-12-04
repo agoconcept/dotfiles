@@ -233,3 +233,7 @@ map <F6> :TaskList<CR>
 map <leader>j :RopeGotoDefinition<CR>
 map <leader>r :RopeRename<CR>
 
+" shortcuts for diffing files
+nnoremap <Leader>gd :Gdiff<cr> " open vimdiff for current file and git head (fugitive extension)
+nnoremap <Leader>gD :diffoff!<cr><c-w>o<cr> " switch back to current file and closes fugitive buffer
+
