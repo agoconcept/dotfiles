@@ -18,8 +18,8 @@ Bundle 'scrooloose/syntastic'
 " netrw
 Bundle "vim-scripts/netrw.vim"
 
-" Command-T
-Bundle "wincent/Command-T"
+" Ctrl-P
+Bundle "kien/ctrlp.vim"
 
 " Show ctags tagbar
 Bundle 'majutsushi/tagbar'
@@ -191,8 +191,6 @@ map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 " Navigate split windows and maximize them with Alt-<Up> and Alt-<Down>
 nmap <silent> <A-Up> :wincmd k<CR>:wincmd _<CR>
 nmap <silent> <A-Down> :wincmd j<CR>:wincmd _<CR>
-
-nmap <silent> <C-t> :CommandT<CR>
 
 " Set colorscheme
 set t_Co=256
