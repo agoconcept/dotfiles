@@ -10,3 +10,6 @@ Host jump-sto
 Host jump-lon
     Hostname jump1.lon.spotify.net
 
+Host jump-ash
+    Hostname jump1.ash.spotify.net
+
