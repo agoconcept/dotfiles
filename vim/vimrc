@@ -89,6 +89,9 @@ Bundle 'sontek/rope-vim'
 Bundle 'rodjek/vim-puppet'
 Bundle 'godlygeek/tabular'
 
+" Navigate tmux and vim panes seamlessly
+Bundle 'christoomey/vim-tmux-navigator'
+
 " Github repos of the user 'vim-scripts'
 " => can omit the username part
 "Bundle 'taglist.vim'
