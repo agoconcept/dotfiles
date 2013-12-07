@@ -96,6 +96,9 @@ Bundle 'godlygeek/tabular'
 " Show invisible characters with <F4>
 Bundle 'cream-showinvisibles'
 
+" Search and highlight current word
+Bundle 'SearchHighlighting'
+
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
 " ...
