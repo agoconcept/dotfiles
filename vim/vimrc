@@ -147,6 +147,7 @@ set winminheight=0
 
 " Allow command completion
 set wildmenu
+set wildmode=list:full
 
 " Allow mouse support
 set mouse=a
