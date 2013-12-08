@@ -3,12 +3,15 @@
 # Current directory
 PWD=`pwd`
 
-all: bash vim git tmux ssh konsole jshint
+all: bash zsh vim git tmux ssh konsole jshint
 
 bash:
 	@ln -fs ${PWD}/bash/bashrc ~/.bashrc
 	@ln -fs ${PWD}/bash/profile ~/.profile
 	@ln -fs ${PWD}/bash/bash_aliases ~/.bash_aliases
+
+zsh:
+	@curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
 vim:
 	@mkdir -p ~/.tmp/
@@ -57,5 +60,5 @@ konsole:
 jshint:
 	@ln -fs ${PWD}/jshint/jshintrc ~/.jshint
 
-.PHONY: all bash vim git tmux ssh konsole jshint
+.PHONY: all bash zsh vim git tmux ssh konsole jshint
 
