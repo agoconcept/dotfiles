@@ -136,10 +136,13 @@ set mouse=a
 set backspace=indent,eol,start
 
 " Define wrap line text
-set wrap
+set nowrap
 
 " Allow breaking lines
 set linebreak
+
+" Show break
+set showbreak=…
 
 " Number of spaces for tabs
 set tabstop=4
