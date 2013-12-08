@@ -120,6 +120,16 @@ syntax on
 " Enable UTF-8 encoding
 set encoding=utf-8
 
+" Set viminfo to store sessions
+set viminfo+=!
+
+" Autoread external changes
+set autoread
+
+" Don't save temporary files in current directory
+set backupdir=~/.tmp
+set directory=~/.tmp
+
 " Show line numbers
 set number
 
@@ -131,6 +141,9 @@ set scrolloff=1
 
 " Tabs configuration
 set showtabline=2
+
+" Set minimum window height
+set winminheight=0
 
 " Allow command completion
 set wildmenu
@@ -179,10 +192,6 @@ set ignorecase
 
 " Use smart case pattern matching
 set smartcase
-
-" Don't save temporary files in current directory
-set backupdir=~/.tmp
-set directory=~/.tmp
 
 " Search for tags file recursively in parent directories
 set tags=./tags;/
