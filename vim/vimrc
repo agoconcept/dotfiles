@@ -32,6 +32,9 @@ Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle "agoconcept/vim-snippets"
 
+" Comments handling
+Bundle "tomtom/tcomment_vim"
+
 " ack-grep
 Bundle "mileszs/ack.vim"
 
