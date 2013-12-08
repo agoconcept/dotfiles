@@ -7,6 +7,7 @@
     path = ~/.gitconfig_template
 [alias]
     d = difftool --tool=vimdiff
+    m = difftool --tool=meld
     b = log --graph --simplify-by-decoration --pretty=format:'%d' --all
     ll = log --graph --full-history --all --color --pretty=format:'%C(red)%h%x09%C(green)%d%C(white) %s %C(yellow)(%an)%Creset'
     l = !git ll --simplify-by-decoration
