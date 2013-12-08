@@ -11,6 +11,7 @@ bash:
 	@ln -fs ${PWD}/bash/bash_aliases ~/.bash_aliases
 
 vim:
+	@mkdir -p ~/.tmp/
 	@ln -fsn ${PWD}/vim/ ~/.vim
 	@ln -fs ${PWD}/vim/vimrc ~/.vimrc
 	@ln -fs ${PWD}/vim/gvimrc ~/.gvimrc

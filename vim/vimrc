@@ -180,6 +180,10 @@ set ignorecase
 " Use smart case pattern matching
 set smartcase
 
+" Don't save temporary files in current directory
+set backupdir=~/.tmp
+set directory=~/.tmp
+
 " Search for tags file recursively in parent directories
 set tags=./tags;/
 
@@ -283,6 +287,7 @@ nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>gd :Gdiff<cr>
 nnoremap <leader>gD :diffoff!<cr><c-w>o<cr> " switch back to current file and closes fugitive buffer
 nnoremap <leader>gb :Gblame<cr>
+nnoremap <Leader>gw :!git add . && git commit -m 'WIP' && git push<cr>
 
 """ REMAP some F-keys
 " F2: Toggle paste mode to avoid screwing indentation
