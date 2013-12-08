@@ -252,6 +252,9 @@ augroup CursorLine
   au WinLeave * setlocal nocursorline
 augroup END
 
+" Better highlighting of matching brackets and parenthesis
+highlight MatchParen cterm=none ctermbg=white  ctermfg=blue gui=none guibg=white  guifg=blue
+
 """ NAVIGATION
 " Easier split windows navigation
 nnoremap <C-h> <C-w>h
@@ -271,9 +274,12 @@ map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 map <leader>j :RopeGotoDefinition<CR>
 map <leader>r :RopeRename<CR>
 
-" shortcuts for diffing files
-nnoremap <leader>gd :Gdiff<cr> " open vimdiff for current file and git head (fugitive extension)
+" shortcuts for git
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gc :Gcommit<cr>
+nnoremap <leader>gd :Gdiff<cr>
 nnoremap <leader>gD :diffoff!<cr><c-w>o<cr> " switch back to current file and closes fugitive buffer
+nnoremap <leader>gb :Gblame<cr>
 
 """ REMAP some F-keys
 " F2: Toggle paste mode to avoid screwing indentation
