@@ -299,6 +299,10 @@ nnoremap <leader>gD :diffoff!<cr><c-w>o<cr> " switch back to current file and cl
 nnoremap <leader>gb :Gblame<cr>
 nnoremap <Leader>gw :!git add . && git commit -m 'WIP' && git push<cr>
 
+" gitgutter shortcuts
+nnoremap <leader>hn :GitGutterNextHunk<cr>
+nnoremap <leader>hp :GitGutterPrevHunk<cr>
+
 """ REMAP some F-keys
 " F2: Toggle paste mode to avoid screwing indentation
 nnoremap <F2> :set invpaste paste?<CR>
