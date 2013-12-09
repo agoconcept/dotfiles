@@ -287,6 +287,8 @@ nmap <silent> <A-Down> :wincmd j<CR>:wincmd _<CR>
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
+" Shortcut for Ack
+nnoremap <leader>a :Ack! 
 " Rope shortcuts
 map <leader>j :RopeGotoDefinition<CR>
 map <leader>r :RopeRename<CR>
