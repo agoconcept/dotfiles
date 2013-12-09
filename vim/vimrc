@@ -276,7 +276,7 @@ augroup CursorLine
 augroup END
 
 " Better highlighting of matching brackets and parenthesis
-highlight MatchParen cterm=none ctermbg=white  ctermfg=black gui=none guibg=white  guifg=black
+highlight MatchParen cterm=none ctermbg=250 ctermfg=235 gui=none guibg=250 guifg=235
 
 """ NAVIGATION
 " Easier split windows navigation
