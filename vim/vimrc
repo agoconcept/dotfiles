@@ -165,10 +165,15 @@ set linebreak
 set showbreak=…
 
 " Number of spaces for tabs
-set tabstop=4
+set tabstop=2
 
 " Number of spaces for each step of autoindent
-set shiftwidth=4
+set shiftwidth=2
+
+" Set indentation for specific file types
+autocmd FileType python setlocal shiftwidth=4 tabstop=4
+autocmd FileType sh setlocal shiftwidth=4 tabstop=4
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
 " Round indent to multiples of shiftwidth
 set shiftround
