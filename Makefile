@@ -13,6 +13,7 @@ bash:
 
 zsh:
 	@curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+	@ln -fs ${PWD}/zsh/zshrc ~/.zshrc
 
 vim:
 	@mkdir -p ~/.tmp/
