@@ -45,3 +45,8 @@ randomPassword() {
     </dev/urandom tr -dc '1234567890qwertpoiuyasdfglkjhzxcvbmnQWERTPOIUYASDFGLKJHZXCVBMN' | head -c${1}; echo ""
 }
 
+# Open all modified files in a git repo
+vimgit() {
+    vim -p $(git status --porcelain | awk {'print $2'})
+}
+
