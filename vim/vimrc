@@ -297,15 +297,18 @@ map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 nnoremap <leader>a :Ack!
 
 " Rope shortcuts
-map <leader>j :RopeGotoDefinition<CR>
-map <leader>r :RopeRename<CR>
+map <leader>rd :RopeGotoDefinition<CR>
+map <leader>rr :RopeRename<CR>
 
 " shortcuts for git
-nnoremap <leader>gs :Gstatus<cr>
-nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>gd :Gdiff<cr>
 nnoremap <leader>gD :diffoff!<cr><c-w>o<cr> " switch back to current file and closes fugitive buffer
 nnoremap <leader>gb :Gblame<cr>
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gc :Gcommit<cr>
+nnoremap <Leader>gp :!git push origin HEAD:refs/for/      " to be completed with the destination branch
+nnoremap <Leader>gpm :!git push origin HEAD:refs/for/master<cr>
+nnoremap <Leader>gpp :!git push origin HEAD:refs/for/production<cr>
 nnoremap <Leader>gw :!git add . && git commit -m 'WIP' && git push<cr>
 
 " gitgutter shortcuts
