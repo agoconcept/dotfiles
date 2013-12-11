@@ -113,10 +113,12 @@ LANG=en_US.UTF-8
 LANGUAGE=en_US.UTF-8
 
 source ~/.bash_colors
+source ~/.bash-git-prompt/gitprompt.sh
 
 PS_LINE1="$(FgColor 209)$(date +%Y.%m.%d)-\t$(FgColor 255) $(FgColor 118)[\w]$(FgColor 255)"
-PS_LINE2="(\$(if [[ \$? == 0 ]]; then echo \"$(FgColor 10)\342\234\223\"; else echo \"$(FgColor 9)\342\234\227\"; fi)$(FgColor 255)) $(FgColor 135)\u$(FgColor 255)@$(FgColor 222)\h$(FgColor 255) \$(__git_ps1 '($(FgColor 38)%s$(FgColor 255))') $ "
-PS1="\n${PS_LINE1}\n${PS_LINE2}"
+PS_LINE2="(\$(if [[ \$? == 0 ]]; then echo \"$(FgColor 10)\342\234\223\"; else echo \"$(FgColor 9)\342\234\227\"; fi)$(FgColor 255)) $(FgColor 135)\u$(FgColor 255)@$(FgColor 222)\h$(FgColor 255)"
+GIT_PROMPT_START="\n${PS_LINE1}\n${PS_LINE2}"
+GIT_PROMPT_END=" $ "
 
 if [ -f /etc/bash_completion.d/git ] && ! shopt -oq posix; then
     source /etc/bash_completion.d/git
