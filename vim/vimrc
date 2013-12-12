@@ -86,7 +86,9 @@ Bundle "digitaltoad/vim-jade"
 "Bundle "marijnh/tern_for_vim"
 
 " rope for vim
-Bundle 'sontek/rope-vim'
+if has("python")
+  Bundle 'sontek/rope-vim'
+endif
 
 " Plugins for handling puppet files
 Bundle 'rodjek/vim-puppet'
@@ -297,8 +299,10 @@ map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 nnoremap <leader>a :Ack!
 
 " Rope shortcuts
-map <leader>rd :RopeGotoDefinition<CR>
-map <leader>rr :RopeRename<CR>
+if has("python")
+  map <leader>rd :RopeGotoDefinition<CR>
+  map <leader>rr :RopeRename<CR>
+endif
 
 " shortcuts for git
 nnoremap <leader>gd :Gdiff<CR>
