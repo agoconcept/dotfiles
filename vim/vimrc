@@ -315,7 +315,7 @@ nnoremap <leader>gD :diffoff!<CR><c-w>o<CR> " switch back to current file and cl
 nnoremap <leader>gb :Gblame<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gc :Gcommit<CR>
-nnoremap <Leader>gp :!git push origin HEAD:refs/for/      " to be completed with the destination branch
+nnoremap <Leader>gp :!git push
 nnoremap <Leader>gpm :!git push origin HEAD:refs/for/master<CR>
 nnoremap <Leader>gpp :!git push origin HEAD:refs/for/production<CR>
 nnoremap <Leader>gw :!git add . && git commit -m 'WIP' && git push<CR>
