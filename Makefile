@@ -56,9 +56,9 @@ ssh:
 	@ln -fs ${PWD}/ssh/config ~/.ssh/config
 
 konsole:
-	@ln -fs ${PWD}/konsole/tmux.profile ~/.kde/share/apps/konsole/tmux.profile
-	@ln -fs ${PWD}/konsole/DarkPastels.colorscheme ~/.kde/share/apps/konsole/DarkPastels.colorscheme
-	@ln -fs ${PWD}/konsole/WhiteOnBlack.colorscheme ~/.kde/share/apps/konsole/WhiteOnBlack.colorscheme
+	-@[ -d ~/.kde/share/apps/konsole ] && ln -fs ${PWD}/konsole/tmux.profile ~/.kde/share/apps/konsole/tmux.profile
+	-@[ -d ~/.kde/share/apps/konsole ] && ln -fs ${PWD}/konsole/DarkPastels.colorscheme ~/.kde/share/apps/konsole/DarkPastels.colorscheme
+	-@[ -d ~/.kde/share/apps/konsole ] && ln -fs ${PWD}/konsole/WhiteOnBlack.colorscheme ~/.kde/share/apps/konsole/WhiteOnBlack.colorscheme
 
 jshint:
 	@ln -fs ${PWD}/jshint/jshintrc ~/.jshint
