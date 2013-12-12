@@ -75,6 +75,11 @@ Bundle 'majutsushi/tagbar'
 " Autocomplete C/C++ code
 Bundle 'Rip-Rip/clang_complete'
 
+" Autocomplete for Python
+if has("python")
+  Bundle "davidhalter/jedi-vim"
+endif
+
 " Sets up node.js configuration
 Bundle "moll/vim-node"
 
