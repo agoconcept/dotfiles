@@ -35,6 +35,10 @@ Bundle "agoconcept/vim-snippets"
 " Comments handling
 Bundle "tomtom/tcomment_vim"
 
+" Surround
+Bundle "tpope/vim-surround"
+Bundle "tpope/vim-repeat"
+
 " ack-grep
 Bundle "mileszs/ack.vim"
 
