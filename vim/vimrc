@@ -307,6 +307,8 @@ nnoremap <leader>a :Ack!
 if has("python")
   map <leader>rd :RopeGotoDefinition<CR>
   map <leader>rr :RopeRename<CR>
+  map <leader>rev :RopeExtractVariable<CR>
+  map <leader>rem :RopeExtractMethod<CR>
 endif
 
 " shortcuts for git
