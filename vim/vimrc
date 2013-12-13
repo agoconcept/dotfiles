@@ -218,7 +218,7 @@ set tags=./tags;/
 set timeoutlen=1000 ttimeoutlen=0
 
 " Remap leader key
-let mapleader = ","
+let mapleader = ','
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
@@ -241,11 +241,15 @@ let g:airline#extensions#tabline#enabled = 1
 
 if &term =~ '^screen'
   " tmux will send xterm-style keys when its xterm-keys option is on
-  execute "set <xUp>=\e[1;*A"
-  execute "set <xDown>=\e[1;*B"
-  execute "set <xRight>=\e[1;*C"
-  execute "set <xLeft>=\e[1;*D"
+  execute 'set <xUp>=\e[1;*A'
+  execute 'set <xDown>=\e[1;*B'
+  execute 'set <xRight>=\e[1;*C'
+  execute 'set <xLeft>=\e[1;*D'
 endif
+
+" Set supertab to navigate from top to bottom
+let g:SuperTabDefaultCompletionType = '<c-n>'
+let g:SuperTabContextDefaultCompletionType = '<c-n>'
 
 """ HIGHLIGHTING
 " Highlight all words like the one under the cursor
@@ -299,10 +303,6 @@ nnoremap <C-l> <C-w>l
 " Navigate split windows and maximize them with Alt-<Up> and Alt-<Down>
 nmap <silent> <A-Up> :wincmd k<CR>:wincmd _<CR>
 nmap <silent> <A-Down> :wincmd j<CR>:wincmd _<CR>
-
-" Navigate tags using C-\ and A-]
-map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 " Shortcut for Ack
 nnoremap <leader>a :Ack!
