@@ -11,5 +11,7 @@
     b = log --graph --simplify-by-decoration --pretty=format:'%d' --all
     ll = log --graph --full-history --all --color --pretty=format:'%C(red)%h%x09%C(green)%d%C(white) %s %C(yellow)(%an)%Creset'
     l = !git ll --simplify-by-decoration
+    pm = push origin HEAD:refs/for/master
+    pp = push origin HEAD:refs/for/production
 [core]
 	excludesfile = /home/santi/.gitignore_global
