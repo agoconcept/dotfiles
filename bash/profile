@@ -47,6 +47,6 @@ randomPassword() {
 
 # Open all modified files in a git repo
 vimgit() {
-    vim -p $(git status --porcelain | awk {'print $2'})
+    cd $(git rev-parse --show-toplevel); vim $(git status --porcelain | awk {'print $2'}); cd -
 }
 
