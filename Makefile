@@ -14,22 +14,10 @@ bash:
 
 zsh:
 	-@sudo apt-get install zsh
-	@curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 	@ln -fs ${PWD}/zsh/zshrc ~/.zshrc
+	-@curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
-vim:
-	@mkdir -p ~/.tmp/
-	@ln -fsn ${PWD}/vim/ ~/.vim
-	@ln -fs ${PWD}/vim/vimrc ~/.vimrc
-	@ln -fs ${PWD}/vim/gvimrc ~/.gvimrc
-	@ln -fs ${PWD}/vim/pdbrc ~/.pdbrc
-	-@[ -d ~/.vim/bundle/vundle ] || git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-	@vim +BundleInstall +qall
-	-@sudo apt-get install pylint
-	-@sudo apt-get install exuberant-ctags
-	-@sudo apt-get install ack-grep
-	#-@cd ~/.vim/bundle/tern_for_vim/ && sudo npm install
-	-@sudo easy_install vimpdb
+fonts:
 	-@sudo apt-get install fontconfig
 	@mkdir -p ~/.fonts/
 	@ln -fs ${PWD}/vim/bundle/powerline-fonts/AnonymousPro/*.ttf ~/.fonts/
@@ -43,6 +31,18 @@ vim:
 	@ln -fs ${PWD}/vim/bundle/powerline-fonts/UbuntuMono/*.ttf ~/.fonts/
 	@fc-cache -vf ~/.fonts
 
+vim: fonts
+	-@sudo apt-get install pylint exuberant-ctags ack-grep python-setuptools
+	@mkdir -p ~/.tmp/
+	@ln -fsn ${PWD}/vim/ ~/.vim
+	@ln -fs ${PWD}/vim/vimrc ~/.vimrc
+	@ln -fs ${PWD}/vim/gvimrc ~/.gvimrc
+	@ln -fs ${PWD}/vim/pdbrc ~/.pdbrc
+	-@[ -d ~/.vim/bundle/vundle ] || git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+	@vim +BundleInstall +qall
+	#-@cd ~/.vim/bundle/tern_for_vim/ && sudo npm install
+	-@sudo easy_install vimpdb
+
 git:
 	@ln -fs ${PWD}/git/gitconfig ~/.gitconfig
 	@ln -fs ${PWD}/git/gitconfig_template ~/.gitconfig_template
@@ -50,19 +50,18 @@ git:
 	@echo "*** NOTE! Remember to config the email in the ~/.gitconfig file"
 
 tmux:
-	-@sudo apt-get install tmux
+	-@sudo apt-get install tmux python-setuptools
 	@ln -fs ${PWD}/tmux/tmux.conf ~/.tmux.conf
 	-@[ -d ${PWD}/powerline ] || git clone https://github.com/Lokaltog/powerline ${PWD}/powerline
-	-@sudo apt-get install python-setuptools
 	-@cd ${PWD}/powerline/ && sudo python setup.py install
 
 ssh:
 	@ln -fs ${PWD}/ssh/config ~/.ssh/config
 
 konsole:
-	-@[ -d ~/.kde/share/apps/konsole ] && ln -fs ${PWD}/konsole/tmux.profile ~/.kde/share/apps/konsole/tmux.profile
-	-@[ -d ~/.kde/share/apps/konsole ] && ln -fs ${PWD}/konsole/DarkPastels.colorscheme ~/.kde/share/apps/konsole/DarkPastels.colorscheme
-	-@[ -d ~/.kde/share/apps/konsole ] && ln -fs ${PWD}/konsole/WhiteOnBlack.colorscheme ~/.kde/share/apps/konsole/WhiteOnBlack.colorscheme
+	@[ -d ~/.kde/share/apps/konsole ] && ln -fs ${PWD}/konsole/tmux.profile ~/.kde/share/apps/konsole/tmux.profile
+	@[ -d ~/.kde/share/apps/konsole ] && ln -fs ${PWD}/konsole/DarkPastels.colorscheme ~/.kde/share/apps/konsole/DarkPastels.colorscheme
+	@[ -d ~/.kde/share/apps/konsole ] && ln -fs ${PWD}/konsole/WhiteOnBlack.colorscheme ~/.kde/share/apps/konsole/WhiteOnBlack.colorscheme
 
 jshint:
 	@ln -fs ${PWD}/jshint/jshintrc ~/.jshint
