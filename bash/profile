@@ -50,3 +50,7 @@ vimgit() {
     cd $(git rev-parse --show-toplevel); vim $(git status --porcelain | awk {'print $2'}); cd -
 }
 
+vdebug() {
+    python -S ~/.vdebug/Komodo-PythonRemoteDebugging-8.5.3-83298-linux-x86_64/pydbgp -d localhost:9000 $*
+}
+

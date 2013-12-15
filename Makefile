@@ -31,7 +31,14 @@ fonts:
 	@ln -fs ${PWD}/vim/bundle/powerline-fonts/UbuntuMono/*.ttf ~/.fonts/
 	@fc-cache -vf ~/.fonts
 
-vim: fonts
+vdebug:
+	@mkdir -p ~/.vdebug/
+	@wget -P ~/.vdebug/ -N http://downloads.activestate.com/Komodo/releases/8.5.3/remotedebugging/Komodo-PythonRemoteDebugging-8.5.3-83298-linux-x86_64.tar.gz
+	@tar xvzf ~/.vdebug/Komodo-PythonRemoteDebugging-8.5.3-83298-linux-x86_64.tar.gz -C ~/.vdebug/
+	@patch -N ~/.vdebug/Komodo-PythonRemoteDebugging-8.5.3-83298-linux-x86_64/dbgp/client.py < vim/vdebug.patch
+	@ln -fs ~/.vdebug/Komodo-PythonRemoteDebugging-8.5.3-83298-linux-x86_64/pythonlib/dbgp ~/.vdebug/Komodo-PythonRemoteDebugging-8.5.3-83298-linux-x86_64/dbgp
+
+vim: fonts vdebug
 	-@sudo apt-get install pylint exuberant-ctags ack-grep python-setuptools
 	@mkdir -p ~/.tmp/
 	@ln -fsn ${PWD}/vim/ ~/.vim

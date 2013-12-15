@@ -1,0 +1,15 @@
+3426,3427c3426
+<     _eval_optlist = [['i','transaction_id', int, 1, -1, None],
+<                 ['l','length', int, 1, 0, None]]
+---
+>     _eval_optlist = [['i','transaction_id', int, 1, -1, None]]
+3429c3428
+<         (tid, data_length, data,) = self._getopts(cmdargs, self._eval_optlist, "eval")
+---
+>         (tid, data,) = self._getopts(cmdargs, self._eval_optlist, "eval")
+3445,3446c3444,3445
+<         prop = Property(None, None, value, self._data_encoding,
+<                             self._show_hidden, hiddenContextTypes[context_id])
+---
+>         prop = Property(data, data, value, self._data_encoding,
+>                             self._show_hidden, hiddenContextTypes[0])
