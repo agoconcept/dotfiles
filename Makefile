@@ -39,7 +39,7 @@ vim: fonts
 	@ln -fs ${PWD}/vim/gvimrc ~/.gvimrc
 	@ln -fs ${PWD}/vim/pdbrc ~/.pdbrc
 	-@[ -d ~/.vim/bundle/vundle ] || git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-	@vim +BundleInstall +qall
+	@vim +BundleInstall! +BundleClean +qall
 	#-@cd ~/.vim/bundle/tern_for_vim/ && sudo npm install
 	-@sudo easy_install vimpdb
 
