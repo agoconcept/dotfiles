@@ -13,6 +13,7 @@ bash:
 	-@git clone https://github.com/agoconcept/bash-git-prompt.git ~/.bash-git-prompt
 
 zsh:
+	-@sudo apt-get install zsh
 	@curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 	@ln -fs ${PWD}/zsh/zshrc ~/.zshrc
 
@@ -49,8 +50,10 @@ git:
 	@echo "*** NOTE! Remember to config the email in the ~/.gitconfig file"
 
 tmux:
+	-@sudo apt-get install tmux
 	@ln -fs ${PWD}/tmux/tmux.conf ~/.tmux.conf
 	-@[ -d ${PWD}/powerline ] || git clone https://github.com/Lokaltog/powerline ${PWD}/powerline
+	-@sudo apt-get install python-setuptools
 	-@cd ${PWD}/powerline/ && sudo python setup.py install
 
 ssh:
