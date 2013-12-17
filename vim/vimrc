@@ -84,6 +84,11 @@ if has('python')
   Bundle 'davidhalter/jedi-vim'
 endif
 
+" PEP8 for Python
+if has('python')
+  Bundle 'nvie/vim-flake8'
+endif
+
 " Sets up node.js configuration
 Bundle 'moll/vim-node'
 
@@ -352,4 +357,12 @@ nmap <F8> :TagbarToggle<CR>
 
 " F10: Toggle highlighting all matches of current word
 map <F10> :call ToggleHighlight(1)<CR>
+
+""" MISC
+" PEP8 configuration
+let g:flake8_max_line_length=120
+let g:flake8_ignore='W391'        " Blank line at end of file
+
+" Call flake8 when saving python files
+"autocmd BufWritePost *.py call Flake8()
 
