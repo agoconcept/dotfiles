@@ -262,6 +262,12 @@ endif
 let g:SuperTabDefaultCompletionType = '<c-n>'
 let g:SuperTabContextDefaultCompletionType = '<c-n>'
 
+" Prevent autocompletion after comma
+let g:SuperTabNoCompleteAfter = ['^', ',', '\s']
+
+" Avoid selecting the first item in the completion menu by default
+let g:jedi#popup_select_first = 0
+
 """ HIGHLIGHTING
 " Highlight all words like the one under the cursor
 " Adapted from http://stackoverflow.com/questions/15999958/can-an-autocmd-be-turned-on-off
@@ -337,6 +343,13 @@ nnoremap <Leader>gw :!git add . && git commit -m 'WIP' && git push<CR>
 " gitgutter shortcuts
 nnoremap <leader>hn :GitGutterNextHunk<CR>
 nnoremap <leader>hp :GitGutterPrevHunk<CR>
+
+" Make quickfix window always at the bottom and 5 rows height
+function SetQuickfixWindow()
+  wincmd J
+  5wincmd _
+endfunction
+autocmd FileType qf call SetQuickfixWindow()
 
 """ REMAP some F-keys
 " F2: Toggle paste mode to avoid screwing indentation
