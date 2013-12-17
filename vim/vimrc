@@ -184,6 +184,9 @@ set tabstop=2
 " Number of spaces for each step of autoindent
 set shiftwidth=2
 
+" Highlight maximum recommended width
+set colorcolumn=79
+
 " Set indentation for specific file types
 autocmd FileType python setlocal shiftwidth=4 tabstop=4
 autocmd FileType sh setlocal shiftwidth=4 tabstop=4
