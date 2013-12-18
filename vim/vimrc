@@ -127,6 +127,9 @@ Bundle 'cream-showinvisibles'
 " Search and highlight current word
 Bundle 'SearchHighlighting'
 
+" Python coverage module
+Bundle 'py-coverage'
+
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
 " ...
