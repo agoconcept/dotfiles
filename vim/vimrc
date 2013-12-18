@@ -268,8 +268,14 @@ let g:SuperTabContextDefaultCompletionType = '<c-n>'
 " Prevent autocompletion after several characters
 let g:SuperTabNoCompleteAfter = ['^', ',', ':', "'", '"', '\s']
 
+" Avoid popping up after dot
+let g:jedi#popup_on_dot = 0
+
 " Avoid selecting the first item in the completion menu by default
 let g:jedi#popup_select_first = 0
+
+" Avoid opening up the preview window
+autocmd FileType python setlocal completeopt-=preview
 
 """ HIGHLIGHTING
 " Highlight all words like the one under the cursor
