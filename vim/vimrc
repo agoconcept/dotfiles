@@ -341,6 +341,10 @@ if has('python')
   map <leader>rem :RopeExtractMethod<CR>
 endif
 
+" Pycoverage shortcuts
+nnoremap <leader>pc :PyCoverageHighlight<CR>
+nnoremap <leader>pC :PyCoverageClear<CR>
+
 " shortcuts for git
 nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>gD :diffoff!<CR><c-w>o<CR> " switch back to current file and closes fugitive buffer
