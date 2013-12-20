@@ -266,7 +266,7 @@ let g:SuperTabDefaultCompletionType = '<c-n>'
 let g:SuperTabContextDefaultCompletionType = '<c-n>'
 
 " Prevent autocompletion after several characters
-let g:SuperTabNoCompleteAfter = ['^', ',', ':', "'", '"', '\s']
+let g:SuperTabNoCompleteAfter = ['^', ',', ':', "'", '"', ')', '\s']
 
 " Avoid popping up after dot
 let g:jedi#popup_on_dot = 0
