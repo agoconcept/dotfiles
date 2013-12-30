@@ -376,8 +376,8 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
-" F5: Toggle gundo
-nnoremap <F5> :GundoToggle<CR>
+" F3: Toggle gundo
+nnoremap <F3> :GundoToggle<CR>
 
 " F6: Toggle tasklist
 map <F6> :TaskList<CR>
@@ -387,8 +387,8 @@ nmap <F8> :TagbarToggle<CR>
 " Make sure that the tagbar is opened for supported files
 "autocmd FileType * nested :call tagbar#autoopen(0)
 
-" F10: Toggle highlighting all matches of current word
-map <F10> :call ToggleHighlight(1)<CR>
+" F9: Toggle highlighting all matches of current word
+map <F9> :call ToggleHighlight(1)<CR>
 
 """ MISC
 " PEP8 configuration
