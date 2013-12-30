@@ -54,6 +54,9 @@ Bundle 'sjl/gundo.vim'
 " netrw
 Bundle 'vim-scripts/netrw.vim'
 
+" vinegar
+Bundle 'tpope/vim-vinegar'
+
 " Store the session automatically when closing and restore it when opening
 "Bundle 'powerman/vim-plugin-autosess'
 
