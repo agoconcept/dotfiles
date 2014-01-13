@@ -162,7 +162,7 @@ set number
 set ruler
 
 " Define scroll offset
-set scrolloff=1
+set scrolloff=999
 
 " Tabs configuration
 set showtabline=2
@@ -196,7 +196,9 @@ set tabstop=2
 set shiftwidth=2
 
 " Highlight maximum recommended width
-set colorcolumn=79
+if version >= 703
+  set colorcolumn=79
+endif
 
 " Set indentation for specific file types
 autocmd FileType python setlocal shiftwidth=4 tabstop=4
