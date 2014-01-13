@@ -13,5 +13,6 @@
     l = !git ll --simplify-by-decoration
     pm = push origin HEAD:refs/for/master
     pp = push origin HEAD:refs/for/production
+    fpush = push --force origin
 [core]
-	excludesfile = /home/santi/.gitignore_global
+    excludesfile = /home/santi/.gitignore_global
