@@ -16,3 +16,5 @@
     fpush = push --force origin
 [core]
     excludesfile = /home/santi/.gitignore_global
+[credential]
+    helper = cache --timeout=3600
