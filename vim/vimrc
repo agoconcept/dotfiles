@@ -133,6 +133,11 @@ Bundle 'SearchHighlighting'
 " Python coverage module
 Bundle 'py-coverage'
 
+" WakaTime
+if has('python')
+  Bundle 'wakatime/vim-wakatime'
+endif
+
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
 " ...
