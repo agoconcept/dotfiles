@@ -167,7 +167,7 @@ set number
 set ruler
 
 " Define scroll offset
-set scrolloff=999
+set scrolloff=2
 
 " Tabs configuration
 set showtabline=2
