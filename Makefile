@@ -39,13 +39,15 @@ vdebug:
 	@ln -fs ~/.vdebug/Komodo-PythonRemoteDebugging-8.5.3-83298-linux-x86_64/pythonlib/dbgp ~/.vdebug/Komodo-PythonRemoteDebugging-8.5.3-83298-linux-x86_64/dbgp
 
 vim: fonts vdebug
-	-@sudo apt-get install pylint exuberant-ctags ack-grep python-setuptools python-flake8 python-coverage
+	-@sudo apt-get install exuberant-ctags ack-grep
+	-@sudo apt-get install pylint python-setuptools python-coverage
+	-@sudo apt-get install python-flake8
 	@mkdir -p ~/.tmp/
 	@ln -fsn ${PWD}/vim/ ~/.vim
 	@ln -fs ${PWD}/vim/vimrc ~/.vimrc
 	@ln -fs ${PWD}/vim/gvimrc ~/.gvimrc
 	@ln -fs ${PWD}/vim/pdbrc ~/.pdbrc
-	@ln -fs /usr/bin/coverage2 /usr/local/bin/coverage 		# For python coverage to work
+	@sudo ln -fs /usr/bin/coverage2 /usr/local/bin/coverage 			# For python coverage to work
 	-@[ -d ~/.vim/bundle/vundle ] || git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 	@vim +BundleInstall! +BundleClean +qall
 	#-@cd ~/.vim/bundle/tern_for_vim/ && sudo npm install
