@@ -35,6 +35,10 @@ Bundle 'agoconcept/vim-snippets'
 " Comments handling
 Bundle 'tomtom/tcomment_vim'
 
+" Match-it
+"Bundle 'tmhedberg/matchit'
+Bundle 'vim-scripts/matchit.zip'
+
 " Surround
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
@@ -330,6 +334,9 @@ augroup END
 highlight MatchParen cterm=none ctermbg=250 ctermfg=235 gui=none guibg=250 guifg=235
 
 """ NAVIGATION
+" Open vimrc easily
+nnoremap <leader>v :e ~/git/dotfiles/vim/vimrc<CR>
+
 " Easier split windows navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
