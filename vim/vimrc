@@ -46,6 +46,9 @@ Bundle 'tpope/vim-repeat'
 " ack-grep
 Bundle 'mileszs/ack.vim'
 
+" ag
+Bundle 'rking/ag.vim'
+
 " Multiple cursors
 Bundle 'terryma/vim-multiple-cursors'
 

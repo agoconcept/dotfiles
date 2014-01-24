@@ -39,7 +39,7 @@ vdebug:
 	@ln -fs ~/.vdebug/Komodo-PythonRemoteDebugging-8.5.3-83298-linux-x86_64/pythonlib/dbgp ~/.vdebug/Komodo-PythonRemoteDebugging-8.5.3-83298-linux-x86_64/dbgp
 
 vim: fonts vdebug
-	-@sudo apt-get install exuberant-ctags ack-grep
+	-@sudo apt-get install exuberant-ctags ack-grep silversearcher-ag
 	-@sudo apt-get install pylint python-setuptools python-coverage
 	-@sudo apt-get install python-flake8
 	@mkdir -p ~/.tmp/
