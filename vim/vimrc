@@ -354,8 +354,9 @@ augroup END
 highlight MatchParen cterm=none ctermbg=250 ctermfg=235 gui=none guibg=250 guifg=235
 
 """ NAVIGATION
-" Open vimrc easily
+" Open and source vimrc easily
 nnoremap <leader>v :e ~/git/dotfiles/vim/vimrc<CR>
+nnoremap <leader>s :source ~/git/dotfiles/vim/vimrc<CR>
 
 " Easier split windows navigation
 nnoremap <C-h> <C-w>h
@@ -398,7 +399,7 @@ nnoremap <leader>hn :GitGutterNextHunk<CR>
 nnoremap <leader>hp :GitGutterPrevHunk<CR>
 
 " Make quickfix window always at the bottom and 5 rows height
-function SetQuickfixWindow()
+function! SetQuickfixWindow()
   wincmd J
   5wincmd _
 endfunction
