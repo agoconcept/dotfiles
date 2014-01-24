@@ -36,12 +36,14 @@ Bundle 'agoconcept/vim-snippets'
 Bundle 'tomtom/tcomment_vim'
 
 " Match-it
-"Bundle 'tmhedberg/matchit'
 Bundle 'vim-scripts/matchit.zip'
 
 " Surround
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
+
+" Select blocks
+Bundle 'michaeljsmith/vim-indent-object'
 
 " ack-grep
 Bundle 'mileszs/ack.vim'
