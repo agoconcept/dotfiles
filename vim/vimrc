@@ -32,6 +32,9 @@ Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'agoconcept/vim-snippets'
 
+" Auto-pairs
+Bundle 'jiangmiao/auto-pairs'
+
 " Comments handling
 Bundle 'tomtom/tcomment_vim'
 
@@ -53,6 +56,9 @@ Bundle 'rking/ag.vim'
 
 " Multiple cursors
 Bundle 'terryma/vim-multiple-cursors'
+
+" Show number of results
+Bundle 'henrik/vim-indexed-search'
 
 " Show marks
 Bundle 'kshenoy/vim-signature'
