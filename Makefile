@@ -42,7 +42,9 @@ vim: fonts vdebug
 	-@sudo apt-get install exuberant-ctags ack-grep silversearcher-ag
 	-@sudo apt-get install pylint python-setuptools python-coverage
 	-@sudo apt-get install python-flake8
-	@mkdir -p ~/.tmp/
+	@mkdir -p ${PWD}/vim/backup/
+	@mkdir -p ${PWD}/vim/swap/
+	@mkdir -p ${PWD}/vim/undo/
 	@ln -fsn ${PWD}/vim/ ~/.vim
 	@ln -fs ${PWD}/vim/vimrc ~/.vimrc
 	@ln -fs ${PWD}/vim/gvimrc ~/.gvimrc

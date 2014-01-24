@@ -163,9 +163,15 @@ set viminfo+=!
 " Autoread external changes
 set autoread
 
+" gundo configuration
+set undodir=~/.vim/tmp/undo/
+set undofile
+set history=256
+set undolevels=256
+
 " Don't save temporary files in current directory
-set backupdir=~/.tmp
-set directory=~/.tmp
+set backupdir=~/.vim/tmp/backup/
+set directory=~/.vim/tmp/swap/
 
 " Show line numbers
 set number
