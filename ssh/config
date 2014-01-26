@@ -2,7 +2,7 @@ Host *
     ServerAliveInterval 60
 
 Host agoconcept
-    Hostname agoconcept.dyndns.org
+    Hostname agoconcept.no-ip.biz
 
 Host jump-sto
     Hostname jump1.sto.spotify.net
