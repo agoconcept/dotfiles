@@ -38,13 +38,13 @@ vdebug:
 	@patch -N ~/.vdebug/Komodo-PythonRemoteDebugging-8.5.3-83298-linux-x86_64/dbgp/client.py < vim/vdebug.patch
 	@ln -fs ~/.vdebug/Komodo-PythonRemoteDebugging-8.5.3-83298-linux-x86_64/pythonlib/dbgp ~/.vdebug/Komodo-PythonRemoteDebugging-8.5.3-83298-linux-x86_64/dbgp
 
-vim: fonts vdebug
+vim: fonts
 	-@sudo apt-get install exuberant-ctags ack-grep silversearcher-ag
 	-@sudo apt-get install pylint python-setuptools python-coverage
 	-@sudo apt-get install python-flake8
-	@mkdir -p ${PWD}/vim/backup/
-	@mkdir -p ${PWD}/vim/swap/
-	@mkdir -p ${PWD}/vim/undo/
+	@mkdir -p ${PWD}/vim/tmp/backup/
+	@mkdir -p ${PWD}/vim/tmp/swap/
+	@mkdir -p ${PWD}/vim/tmp/undo/
 	@ln -fsn ${PWD}/vim/ ~/.vim
 	@ln -fs ${PWD}/vim/vimrc ~/.vimrc
 	@ln -fs ${PWD}/vim/gvimrc ~/.gvimrc

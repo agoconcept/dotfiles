@@ -64,7 +64,9 @@ Bundle 'henrik/vim-indexed-search'
 Bundle 'kshenoy/vim-signature'
 
 " gundo
-Bundle 'sjl/gundo.vim'
+if version >= 703
+  Bundle 'sjl/gundo.vim'
+endif
 
 " netrw
 Bundle 'vim-scripts/netrw.vim'
@@ -82,7 +84,9 @@ Bundle 'vim-scripts/TaskList.vim'
 Bundle 'tpope/vim-fugitive'
 
 " Show differences from git repository
-Bundle 'airblade/vim-gitgutter'
+if version >= 703
+  Bundle 'airblade/vim-gitgutter'
+endif
 
 " Syntax checking
 Bundle 'scrooloose/syntastic'
@@ -172,10 +176,13 @@ set viminfo+=!
 set autoread
 
 " gundo configuration
-set undodir=~/.vim/tmp/undo/
-set undofile
-set history=256
-set undolevels=256
+
+if version >= 703
+  set undodir=~/.vim/tmp/undo/
+  set undofile
+  set history=256
+  set undolevels=256
+endif
 
 " Don't save temporary files in current directory
 set backupdir=~/.vim/tmp/backup/
@@ -185,7 +192,9 @@ set directory=~/.vim/tmp/swap/
 set number
 
 " Show relative line numbers
-set relativenumber
+if version >= 704
+  set relativenumber
+endif
 
 " Show ruler
 set ruler
