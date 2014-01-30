@@ -367,6 +367,10 @@ highlight MatchParen cterm=none ctermbg=250 ctermfg=235 gui=none guibg=250 guifg
 nnoremap <leader>v :e ~/git/dotfiles/vim/vimrc<CR>
 nnoremap <leader>s :source ~/git/dotfiles/vim/vimrc<CR>
 
+" Allow indent multiple times
+vnoremap < <gv
+vnoremap > >gv
+
 " Easier split windows navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
