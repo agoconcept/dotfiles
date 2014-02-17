@@ -387,8 +387,8 @@ nmap <silent> <A-Down> :wincmd j<CR>:wincmd _<CR>
 " Switch buffers
 map <S-Tab> :bnext<CR>
 
-" Shortcut for Ack
-nnoremap <leader>a :Ack!
+" Shortcut for Ag
+nnoremap <leader>a :Ag!
 
 " Rope shortcuts
 if has('python')
