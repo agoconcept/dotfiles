@@ -48,6 +48,9 @@ Bundle 'tpope/vim-repeat'
 " Select blocks
 Bundle 'michaeljsmith/vim-indent-object'
 
+" Blockit
+Bundle 'sk1418/blockit'
+
 " ack-grep
 Bundle 'mileszs/ack.vim'
 
@@ -147,7 +150,7 @@ Bundle 'joonty/vdebug'
 Bundle 'cream-showinvisibles'
 
 " Search and highlight current word
-Bundle 'SearchHighlighting'
+"Bundle 'SearchHighlighting'
 
 " Python coverage module
 Bundle 'py-coverage'
