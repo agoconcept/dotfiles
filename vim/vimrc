@@ -371,8 +371,11 @@ nnoremap <leader>s :source ~/git/dotfiles/vim/vimrc<CR>
 vnoremap < <gv
 vnoremap > >gv
 
+" Star only highlights all occurences of the current word without moving
+noremap <CR> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
+
 " Press Space to turn off highlighting and clear any message already displayed.
-:nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 " Easier split windows navigation
 nnoremap <C-h> <C-w>h
