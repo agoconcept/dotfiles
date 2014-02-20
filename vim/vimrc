@@ -142,23 +142,17 @@ Bundle 'gerw/vim-HiLinkTrace'
 " Vdebug
 Bundle 'joonty/vdebug'
 
-" Github repos of the user 'vim-scripts'
-" => can omit the username part
-"Bundle 'taglist.vim'
-" ...
-" Show invisible characters with <F4>
-Bundle 'cream-showinvisibles'
-
-" Search and highlight current word
-"Bundle 'SearchHighlighting'
-
-" Python coverage module
-Bundle 'py-coverage'
-
 " WakaTime
 if has('python')
   Bundle 'wakatime/vim-wakatime'
 endif
+
+" Github repos of the user 'vim-scripts'
+" => can omit the username part
+"Bundle 'taglist.vim'
+" ...
+" Python coverage module
+Bundle 'py-coverage'
 
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
@@ -214,6 +208,9 @@ set winminheight=0
 " Allow command completion
 set wildmenu
 set wildmode=list:full
+
+" Don't show invisible characters by default
+set nolist
 
 " Allow mouse support
 set mouse=a
@@ -374,6 +371,9 @@ nnoremap <leader>s :source ~/git/dotfiles/vim/vimrc<CR>
 vnoremap < <gv
 vnoremap > >gv
 
+" Press Space to turn off highlighting and clear any message already displayed.
+:nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
 " Easier split windows navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -429,6 +429,9 @@ set showmode
 
 " F3: Toggle gundo
 nnoremap <F3> :GundoToggle<CR>
+
+" F4: Toggle show invisible characters
+map <F4> :set invlist<CR>
 
 " F6: Toggle tasklist
 map <F6> :TaskList<CR>
