@@ -5,7 +5,7 @@ ColorScheme=WhiteOnBlack
 Font=Source Code Pro for Powerline,10,-1,5,63,0,0,0,0,0
 
 [General]
-Command=tmux
+Command=tmux new-session -A -s tmux
 Environment=TERM=xterm-256color
 Name=tmux
 Parent=FALLBACK/
