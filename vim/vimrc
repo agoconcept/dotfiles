@@ -57,9 +57,6 @@ Bundle 'mileszs/ack.vim'
 " ag
 Bundle 'rking/ag.vim'
 
-" Multiple cursors
-Bundle 'terryma/vim-multiple-cursors'
-
 " Show number of results
 Bundle 'henrik/vim-indexed-search'
 
@@ -76,9 +73,6 @@ Bundle 'vim-scripts/netrw.vim'
 
 " vinegar
 Bundle 'tpope/vim-vinegar'
-
-" Store the session automatically when closing and restore it when opening
-"Bundle 'powerman/vim-plugin-autosess'
 
 " tasklist
 Bundle 'vim-scripts/TaskList.vim'
@@ -120,9 +114,6 @@ Bundle 'moll/vim-node'
 " Improve javascript syntax highlight
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'digitaltoad/vim-jade'
-
-" Javascript capabilities
-"Bundle 'marijnh/tern_for_vim'
 
 " rope for vim
 if has('python')
