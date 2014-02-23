@@ -35,9 +35,9 @@ mountRemoteNFS() {
 }
 
 m() {
-    mountRemoteNFS /mnt/agoconcept 192.168.0.102:/var/lib/mldonkey/incoming/files
-    mountRemoteNFS /mnt/HDD-ext 192.168.0.102:/mnt/HDD-ext
-    mountRemoteNFS /mnt/Elements 192.168.0.102:/mnt/Elements
+    mountRemoteNFS /mnt/agoconcept 192.168.0.100:/var/lib/mldonkey/incoming/files
+    mountRemoteNFS /mnt/HDD-ext 192.168.0.100:/mnt/HDD-ext
+    mountRemoteNFS /mnt/Elements 192.168.0.100:/mnt/Elements
 }
 
 # Generate a variable length password
