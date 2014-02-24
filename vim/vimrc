@@ -343,6 +343,11 @@ autocmd InsertEnter * match Error /\s\+\%#\@<!$/
 autocmd InsertLeave * match Error /\s\+$/
 autocmd WinLeave,BufWinLeave * match Error //
 
+" Remove trailing whitespaces
+function! RemoveTrailingWhitespaces()
+  :%s/  *$//gc
+endfunction
+
 " Set cursorline (only for the active window)
 augroup CursorLine
   au!
