@@ -6,6 +6,7 @@
 [include]
     path = ~/.gitconfig_template
 [alias]
+    e = !vim $(git status --porcelain | awk {'print $2'})
     d = difftool
     m = difftool --tool=meld
     b = log --graph --simplify-by-decoration --pretty=format:'%d' --all
