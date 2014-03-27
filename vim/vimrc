@@ -407,7 +407,8 @@ nnoremap <leader>gD :diffoff!<CR><c-w>o<CR> " switch back to current file and cl
 nnoremap <leader>gb :Gblame<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gc :Gcommit<CR>
-nnoremap <Leader>gw :!git add . && git commit -m 'WIP' && git push<CR>
+nnoremap <leader>gp :Git push<CR>
+nnoremap <leader>gw :!git add . && git commit -m 'WIP' && git push<CR>
 
 " gitgutter shortcuts
 nnoremap <leader>hn :GitGutterNextHunk<CR>
@@ -419,6 +420,9 @@ function! SetQuickfixWindow()
   5wincmd _
 endfunction
 autocmd FileType qf call SetQuickfixWindow()
+
+" Toggle readonly mode (useful when diff'ing)
+nnoremap <leader>ro :set readonly!<CR>
 
 """ REMAP some F-keys
 " F2: Toggle paste mode to avoid screwing indentation
