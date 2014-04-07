@@ -176,3 +176,8 @@ google() {
     xdg-open "http://www.google.com/search?q=$search"
 }
 
+# Go to the root git directory for the current project
+gitcd() {
+    cd $(git rev-parse --show-toplevel)
+}
+
