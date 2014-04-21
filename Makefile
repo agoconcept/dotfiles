@@ -62,7 +62,7 @@ git:
 	@echo "*** NOTE! Remember to config the email in the ~/.gitconfig file"
 
 tmux:
-	-@sudo apt-get install tmux python-setuptools
+	-@sudo apt-get install tmux python-setuptools sysstat
 	@ln -fs ${PWD}/tmux/tmux.conf ~/.tmux.conf
 	-@[ -d ${PWD}/powerline ] || git clone https://github.com/Lokaltog/powerline ${PWD}/powerline
 	-@cd ${PWD}/powerline/ && sudo python setup.py install
