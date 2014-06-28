@@ -2,6 +2,9 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# Needed so that vundle works in Ericsson's LMWP
+export SHELL=/bin/bash
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -126,7 +129,7 @@ fi
 
 # Needed for tmux to render all colors correctly
 # Only set it after ssh'ing to remote hosts
-#export TERM=screen-256color
+export TERM=screen-256color
 
 # When logging in remote hosts set the window title to the hostname
 settitle() {
