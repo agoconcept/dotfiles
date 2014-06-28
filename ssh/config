@@ -13,3 +13,18 @@ Host jump-lon
 Host jump-ash
     Hostname jump1.ash.spotify.net
 
+Host register
+    Hostname sekic2986
+
+Host sender
+    Hostname sekic2986
+
+Host receiver
+    Hostname sekic2987
+
+Host titansim
+    Hostname sekic2857
+
+Host dri drm
+    Hostname esekiws5320
+
