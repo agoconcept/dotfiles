@@ -10,6 +10,7 @@ bash:
 	@ln -fs ${PWD}/bash/profile ~/.profile
 	@ln -fs ${PWD}/bash/bash_aliases ~/.bash_aliases
 	@ln -fs ${PWD}/bash/bash_colors ~/.bash_colors
+	@ln -fs ${PWD}/bash/git-prompt-colors.sh ~/.git-prompt-colors.sh
 	-@git clone https://github.com/agoconcept/bash-git-prompt.git ~/.bash-git-prompt
 
 zsh:
