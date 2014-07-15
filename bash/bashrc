@@ -131,6 +131,9 @@ fi
 # Only set it after ssh'ing to remote hosts
 export TERM=screen-256color
 
+# Update PATH so that it also includes ~/bin/
+export PATH=$PATH:~/bin/
+
 # When logging in remote hosts set the window title to the hostname
 settitle() {
         printf "\033k$1\033\\"
