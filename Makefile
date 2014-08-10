@@ -51,6 +51,7 @@ vim: fonts
 	@ln -fs ${PWD}/vim/vimrc ~/.vimrc
 	@ln -fs ${PWD}/vim/gvimrc ~/.gvimrc
 	@ln -fs ${PWD}/vim/pdbrc ~/.pdbrc
+	@ln -fs ${PWD}/vim/wakatime.cfg ~/.wakatime.cfg
 	@sudo ln -fs /usr/bin/coverage2 /usr/local/bin/coverage 			# For python coverage to work
 	-@[ -d ~/.vim/bundle/vundle ] || git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 	@vim +BundleInstall! +BundleClean +qall
