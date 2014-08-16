@@ -366,6 +366,11 @@ highlight MatchParen cterm=none ctermbg=250 ctermfg=235 gui=none guibg=250 guifg
 nnoremap <leader>c :e ~/git/dotfiles/vim/vimrc<CR>
 nnoremap <leader>s :source ~/git/dotfiles/vim/vimrc<CR>
 
+" Jump to the end of the text just pasted
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+
 " Allow indent multiple times
 vnoremap < <gv
 vnoremap > >gv
