@@ -136,7 +136,7 @@ export PATH=$PATH:~/bin/
 
 # When logging in remote hosts set the window title to the hostname
 settitle() {
-        printf "\033k$1\033\\"
+        printf "\033k@$1\033\\"
 }
 
 test -z $TMUX && settitle $(hostname)
@@ -147,7 +147,7 @@ ssh() {
         command ssh "$@"
     else
         last_param=${!#}
-        tmux rename-window -- "${last_param}"
+        tmux rename-window -- "@${last_param}"
         command ssh "$@"
         tmux set-window-option automatic-rename "on" 1> /dev/null
     fi
