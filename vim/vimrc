@@ -266,7 +266,7 @@ set tags=./tags;/
 set timeoutlen=1000 ttimeoutlen=0
 
 " Remap leader key
-let mapleader = ','
+let mapleader = "\<space>"
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
@@ -360,7 +360,7 @@ highlight MatchParen cterm=none ctermbg=250 ctermfg=235 gui=none guibg=250 guifg
 
 """ NAVIGATION
 " Open and source vimrc easily
-nnoremap <leader>v :e ~/git/dotfiles/vim/vimrc<CR>
+nnoremap <leader>c :e ~/git/dotfiles/vim/vimrc<CR>
 nnoremap <leader>s :source ~/git/dotfiles/vim/vimrc<CR>
 
 " Allow indent multiple times
