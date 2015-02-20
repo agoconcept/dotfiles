@@ -1,8 +1,8 @@
 [init]
     templatedir = ~/.git_template
 [user]
-    email = santiago.gallego@ericsson.com
-    name = egalsan
+    email = santiago.gallego.rodrigo@gmail.com
+    name = Santiago Gallego
 [include]
     path = ~/.gitconfig_template
 [alias]
