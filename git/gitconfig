@@ -1,8 +1,8 @@
 [init]
     templatedir = ~/.git_template
 [user]
-    email = santiago.gallego.rodrigo@gmail.com
-    name = Santiago Gallego
+    email = santiago.gallego@ericsson.com
+    name = egalsan
 [include]
     path = ~/.gitconfig_template
 [alias]
@@ -16,6 +16,7 @@
     pp = push origin HEAD:refs/for/production
     fpush = push --force origin
     pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
+    s = !git rebase -i $(git merge-base HEAD master)
 [core]
     excludesfile = /home/santi/.gitignore_global
 [credential]
