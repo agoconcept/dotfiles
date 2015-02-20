@@ -14,10 +14,12 @@ HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
 shopt -s histappend
+shopt -s lithist
+shopt -s cmdhist
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=1000000
+HISTFILESIZE=10000000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -186,4 +188,7 @@ google() {
 gitcd() {
     cd $(git rev-parse --show-toplevel)
 }
+
+# Support ANSI colors
+LESS=-R
 
