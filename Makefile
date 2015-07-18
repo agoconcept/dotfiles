@@ -71,12 +71,13 @@ tmux:
 	-@cd ${PWD}/powerline/ && sudo python setup.py install
 
 ssh:
+	@mkdir -p ~/.ssh/
 	@ln -fs ${PWD}/ssh/config ~/.ssh/config
 
 konsole:
-	-@[ -d ~/.kde/share/apps/konsole ] && ln -fs ${PWD}/konsole/tmux.profile ~/.kde/share/apps/konsole/tmux.profile
-	-@[ -d ~/.kde/share/apps/konsole ] && ln -fs ${PWD}/konsole/DarkPastels.colorscheme ~/.kde/share/apps/konsole/DarkPastels.colorscheme
-	-@[ -d ~/.kde/share/apps/konsole ] && ln -fs ${PWD}/konsole/WhiteOnBlack.colorscheme ~/.kde/share/apps/konsole/WhiteOnBlack.colorscheme
+	-@[ -d ~/.local/share/konsole ] && ln -fs ${PWD}/konsole/tmux.profile ~/.local/share/konsole/tmux.profile
+	-@[ -d ~/.local/share/konsole ] && ln -fs ${PWD}/konsole/DarkPastels.colorscheme ~/.local/share/konsole/DarkPastels.colorscheme
+	-@[ -d ~/.local/share/konsole ] && ln -fs ${PWD}/konsole/WhiteOnBlack.colorscheme ~/.local/share/konsole/WhiteOnBlack.colorscheme
 
 jshint:
 	-@ln -fs ${PWD}/jshint/jshintrc ~/.jshint
