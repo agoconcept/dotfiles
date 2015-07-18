@@ -118,11 +118,6 @@ Bundle 'moll/vim-node'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'digitaltoad/vim-jade'
 
-" rope for vim
-if has('python')
-  Bundle 'sontek/rope-vim'
-endif
-
 " Plugins for handling puppet files
 Bundle 'rodjek/vim-puppet'
 Bundle 'godlygeek/tabular'
