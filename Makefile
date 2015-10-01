@@ -3,7 +3,7 @@
 # Current directory
 PWD=`pwd`
 
-all: bash zsh vim git tmux ssh konsole jshint
+all: bash zsh git tmux ssh konsole jshint vim
 
 bash:
 	@ln -fs ${PWD}/bash/bashrc ~/.bashrc
@@ -39,25 +39,6 @@ vdebug:
 	@patch -N ~/.vdebug/Komodo-PythonRemoteDebugging-8.5.3-83298-linux-x86_64/dbgp/client.py < vim/vdebug.patch
 	@ln -fs ~/.vdebug/Komodo-PythonRemoteDebugging-8.5.3-83298-linux-x86_64/pythonlib/dbgp ~/.vdebug/Komodo-PythonRemoteDebugging-8.5.3-83298-linux-x86_64/dbgp
 
-vim: fonts
-	-@sudo apt-get -y install vim
-	-@sudo apt-get -y install exuberant-ctags ack-grep silversearcher-ag
-	-@sudo apt-get -y install pylint python-setuptools python-coverage
-	-@sudo apt-get -y install python-flake8
-	@mkdir -p ${PWD}/vim/tmp/backup/
-	@mkdir -p ${PWD}/vim/tmp/swap/
-	@mkdir -p ${PWD}/vim/tmp/undo/
-	@ln -fsn ${PWD}/vim/ ~/.vim
-	@ln -fs ${PWD}/vim/vimrc ~/.vimrc
-	@ln -fs ${PWD}/vim/gvimrc ~/.gvimrc
-	@ln -fs ${PWD}/vim/pdbrc ~/.pdbrc
-	@ln -fs ${PWD}/vim/wakatime.cfg ~/.wakatime.cfg
-	@sudo ln -fs /usr/bin/coverage2 /usr/local/bin/coverage 			# For python coverage to work
-	-@[ -d ~/.vim/bundle/vundle ] || git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-	@vim +BundleInstall! +BundleClean +qall
-	#-@cd ~/.vim/bundle/tern_for_vim/ && sudo npm install
-	-@sudo easy_install vimpdb
-
 git:
 	@ln -fs ${PWD}/git/gitconfig ~/.gitconfig
 	@ln -fs ${PWD}/git/gitconfig_template ~/.gitconfig_template
@@ -81,6 +62,25 @@ konsole:
 
 jshint:
 	-@ln -fs ${PWD}/jshint/jshintrc ~/.jshint
+
+vim: fonts
+	-@sudo apt-get -y install vim
+	-@sudo apt-get -y install exuberant-ctags ack-grep silversearcher-ag
+	-@sudo apt-get -y install pylint python-setuptools python-coverage
+	-@sudo apt-get -y install python-flake8
+	@mkdir -p ${PWD}/vim/tmp/backup/
+	@mkdir -p ${PWD}/vim/tmp/swap/
+	@mkdir -p ${PWD}/vim/tmp/undo/
+	@ln -fsn ${PWD}/vim/ ~/.vim
+	@ln -fs ${PWD}/vim/vimrc ~/.vimrc
+	@ln -fs ${PWD}/vim/gvimrc ~/.gvimrc
+	@ln -fs ${PWD}/vim/pdbrc ~/.pdbrc
+	@ln -fs ${PWD}/vim/wakatime.cfg ~/.wakatime.cfg
+	@sudo ln -fs /usr/bin/coverage2 /usr/local/bin/coverage 			# For python coverage to work
+	-@[ -d ~/.vim/bundle/vundle ] || git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+	@vim +BundleInstall! +BundleClean +qall
+	#-@cd ~/.vim/bundle/tern_for_vim/ && sudo npm install
+	-@sudo easy_install vimpdb
 
 .PHONY: all bash zsh vim git tmux ssh konsole jshint
 
