@@ -275,7 +275,11 @@ set t_Co=256
 set background=dark
 let g:molokai_original = 1
 let g:rehash256 = 1
-colorscheme molokai
+try
+  colorscheme molokai
+catch /^Vim\%((\a\+)\)\=:E185/
+  " deal with it
+endtry
 
 " Set config for airline/powerline
 set laststatus=2
