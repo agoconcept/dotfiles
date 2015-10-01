@@ -78,7 +78,7 @@ vim: fonts
 	@ln -fs ${PWD}/vim/wakatime.cfg ~/.wakatime.cfg
 	@sudo ln -fs /usr/bin/coverage2 /usr/local/bin/coverage 			# For python coverage to work
 	-@[ -d ~/.vim/bundle/vundle ] || git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-	@vim +BundleInstall! +BundleClean +qall
+	@vim -i NONE -c VundleInstall -c quitall
 	#-@cd ~/.vim/bundle/tern_for_vim/ && sudo npm install
 	-@sudo easy_install vimpdb
 
