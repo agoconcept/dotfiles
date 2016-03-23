@@ -17,8 +17,9 @@ Bundle 'gmarik/vundle'
 Bundle 'tomasr/molokai'
 
 " Airline/powerline
-Bundle 'bling/vim-airline'
+Bundle 'vim-airline/vim-airline'
 Bundle 'Lokaltog/powerline-fonts'
+Bundle 'vim-airline/vim-airline-themes'
 
 " Ctrl-P
 Bundle 'kien/ctrlp.vim'

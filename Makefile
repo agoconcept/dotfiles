@@ -3,6 +3,9 @@
 # Current directory
 PWD=`pwd`
 
+# konsole directory
+KONSOLE_DIR=~/.kde/share/apps/konsole
+
 all: bash zsh git tmux ssh konsole jshint vim
 
 bash:
@@ -56,9 +59,9 @@ ssh:
 	@ln -fs ${PWD}/ssh/config ~/.ssh/config
 
 konsole:
-	-@[ -d ~/.local/share/konsole ] && ln -fs ${PWD}/konsole/tmux.profile ~/.local/share/konsole/tmux.profile
-	-@[ -d ~/.local/share/konsole ] && ln -fs ${PWD}/konsole/DarkPastels.colorscheme ~/.local/share/konsole/DarkPastels.colorscheme
-	-@[ -d ~/.local/share/konsole ] && ln -fs ${PWD}/konsole/WhiteOnBlack.colorscheme ~/.local/share/konsole/WhiteOnBlack.colorscheme
+	[ -d ${KONSOLE_DIR} ] && ln -fs ${PWD}/konsole/tmux.profile ${KONSOLE_DIR}/tmux.profile
+	[ -d ${KONSOLE_DIR} ] && ln -fs ${PWD}/konsole/DarkPastels.colorscheme ${KONSOLE_DIR}/DarkPastels.colorscheme
+	[ -d ${KONSOLE_DIR} ] && ln -fs ${PWD}/konsole/WhiteOnBlack.colorscheme ${KONSOLE_DIR}/WhiteOnBlack.colorscheme
 
 jshint:
 	-@ln -fs ${PWD}/jshint/jshintrc ~/.jshint
