@@ -119,6 +119,9 @@ Bundle 'moll/vim-node'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'digitaltoad/vim-jade'
 
+" Improve JSON highlighting
+Bundle 'elzr/vim-json'
+
 " Plugins for handling puppet files
 Bundle 'rodjek/vim-puppet'
 Bundle 'godlygeek/tabular'
@@ -351,6 +354,9 @@ function! RemoveTrailingWhitespaces()
   :%s/  *$//gc
 endfunction
 
+" Disable concealing in JSON highlighter
+let g:vim_json_syntax_conceal = 0
+
 " Set cursorline (only for the active window)
 augroup CursorLine
   au!
@@ -435,6 +441,10 @@ autocmd FileType qf call SetQuickfixWindow()
 
 " Toggle readonly mode (useful when diff'ing)
 nnoremap <leader>ro :set readonly!<CR>
+
+" associate *.sapc with custom sapc filetype
+au BufRead,BufNewFile *.sapc set filetype=sapc
+au BufRead,BufNewFile *.sapc set syntax=json
 
 """ REMAP some F-keys
 " F2: Toggle paste mode to avoid screwing indentation
