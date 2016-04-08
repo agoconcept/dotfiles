@@ -28,9 +28,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'ervandew/supertab'
 
 " Snippets handling
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
+Bundle 'SirVer/ultisnips'
 Bundle 'agoconcept/vim-snippets'
 
 " Auto-pairs
@@ -300,6 +298,16 @@ if &term =~ '^screen'
   execute 'set <xRight>=\e[1;*C'
   execute 'set <xLeft>=\e[1;*D'
 endif
+
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsListSnippets="<s-tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-f>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 " Set supertab to navigate from top to bottom
 let g:SuperTabDefaultCompletionType = '<c-n>'
