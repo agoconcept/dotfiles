@@ -145,6 +145,9 @@ endif
 " Python coverage module
 Bundle 'py-coverage'
 
+" Alda music composer syntax
+Bundle 'daveyarwood/vim-alda'
+
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
 " ...
