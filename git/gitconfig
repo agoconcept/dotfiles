@@ -11,6 +11,7 @@
     m = difftool --tool=meld
     b = log --graph --simplify-by-decoration --pretty=format:'%d' --all
     ll = log --graph --full-history --all --color --pretty=format:'%C(red)%h%x09%C(green)%d%C(white) %s %C(yellow)(%an)%Creset'
+    ln = log --name-status --oneline
     l = !git ll --simplify-by-decoration
     pm = push origin HEAD:refs/for/master
     pp = push origin HEAD:refs/for/production
