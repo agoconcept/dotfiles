@@ -8,6 +8,7 @@
 [alias]
     e = !vim $(git status --porcelain | awk {'print $2'})
     d = difftool
+    dn = difftool --name-only
     m = difftool --tool=meld
     b = log --graph --simplify-by-decoration --pretty=format:'%d' --all
     ll = log --graph --full-history --all --color --pretty=format:'%C(red)%h%x09%C(green)%d%C(white) %s %C(yellow)(%an)%Creset'
@@ -20,6 +21,7 @@
     s = !git rebase -i $(git merge-base HEAD master)
 [core]
     excludesfile = /home/santi/.gitignore_global
+    autocrlf = false
 [credential]
     helper = cache --timeout=3600
 [diff]
