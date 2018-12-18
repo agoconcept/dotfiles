@@ -263,7 +263,7 @@ set ignorecase
 set smartcase
 
 " Search for tags file recursively in parent directories
-set tags=./tags;/
+set tags=./tags
 
 " Avoid delays when pressing ESC
 set timeoutlen=1000 ttimeoutlen=0
