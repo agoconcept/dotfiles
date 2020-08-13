@@ -28,8 +28,8 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'ervandew/supertab'
 
 " Snippets handling
-Bundle 'SirVer/ultisnips'
-Bundle 'agoconcept/vim-snippets'
+"Bundle 'SirVer/ultisnips'
+"Bundle 'agoconcept/vim-snippets'
 
 " Auto-pairs
 Bundle 'jiangmiao/auto-pairs'
@@ -114,8 +114,8 @@ endif
 Bundle 'moll/vim-node'
 
 " Improve javascript syntax highlight
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'digitaltoad/vim-jade'
+"Bundle 'jelera/vim-javascript-syntax'
+"Bundle 'digitaltoad/vim-jade'
 
 " Improve JSON highlighting
 Bundle 'elzr/vim-json'
@@ -374,6 +374,15 @@ augroup CursorLine
   au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
   au WinLeave * setlocal nocursorline
 augroup END
+
+""" SOME TWEAKS FOR IMPROVING PERFORMANCE
+""" extracted from https://eduncan911.com/software/fix-slow-scrolling-in-vim-and-neovim.html
+" Set lazyredraw
+set lazyredraw
+
+" Disable syntax highlighting after 128 columns and set minlines to 256
+set synmaxcol=128
+syntax sync minlines=256
 
 " Better highlighting of matching brackets and parenthesis
 highlight MatchParen cterm=none ctermbg=250 ctermfg=235 gui=none guibg=250 guifg=235
