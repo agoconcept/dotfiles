@@ -4,9 +4,9 @@
 PWD=`pwd`
 
 # konsole directory
-KONSOLE_DIR=~/.kde/share/apps/konsole
+KONSOLE_DIR=~/.local/share/konsole
 
-all: bash zsh git tmux ssh konsole jshint vim
+all: bash curl zsh git tmux ssh konsole jshint vim
 
 bash:
 	@ln -fs ${PWD}/bash/bashrc ~/.bashrc
@@ -15,6 +15,9 @@ bash:
 	@ln -fs ${PWD}/bash/bash_colors ~/.bash_colors
 	@ln -fs ${PWD}/bash/git-prompt-colors.sh ~/.git-prompt-colors.sh
 	-@git clone https://github.com/agoconcept/bash-git-prompt.git ~/.bash-git-prompt
+
+curl:
+	-@sudo apt-get -y install curl
 
 zsh:
 	-@sudo apt-get -y install zsh
@@ -52,7 +55,7 @@ tmux:
 	-@sudo apt-get -y install tmux python-setuptools sysstat
 	@ln -fs ${PWD}/tmux/tmux.conf ~/.tmux.conf
 	-@[ -d ${PWD}/powerline ] || git clone https://github.com/Lokaltog/powerline ${PWD}/powerline
-	-@cd ${PWD}/powerline/ && sudo python setup.py install
+	-@cd ${PWD}/powerline/ && sudo python2 setup.py install
 
 ssh:
 	@mkdir -p ~/.ssh/
