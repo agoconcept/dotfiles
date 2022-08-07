@@ -62,9 +62,9 @@ ssh:
 	@ln -fs ${PWD}/ssh/config ~/.ssh/config
 
 konsole:
-	[ -d ${KONSOLE_DIR} ] && ln -fs ${PWD}/konsole/tmux.profile ${KONSOLE_DIR}/tmux.profile
-	[ -d ${KONSOLE_DIR} ] && ln -fs ${PWD}/konsole/DarkPastels.colorscheme ${KONSOLE_DIR}/DarkPastels.colorscheme
-	[ -d ${KONSOLE_DIR} ] && ln -fs ${PWD}/konsole/WhiteOnBlack.colorscheme ${KONSOLE_DIR}/WhiteOnBlack.colorscheme
+	@[ -d ${KONSOLE_DIR} ] && ln -fs ${PWD}/konsole/tmux.profile ${KONSOLE_DIR}/tmux.profile
+	@[ -d ${KONSOLE_DIR} ] && ln -fs ${PWD}/konsole/DarkPastels.colorscheme ${KONSOLE_DIR}/DarkPastels.colorscheme
+	@[ -d ${KONSOLE_DIR} ] && ln -fs ${PWD}/konsole/WhiteOnBlack.colorscheme ${KONSOLE_DIR}/WhiteOnBlack.colorscheme
 
 jshint:
 	-@ln -fs ${PWD}/jshint/jshintrc ~/.jshint
