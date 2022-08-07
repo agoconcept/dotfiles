@@ -443,9 +443,9 @@ nnoremap <leader>pC :PyCoverageClear<CR>
 " shortcuts for git
 nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>gD :diffoff!<CR><c-w>o<CR> " switch back to current file and closes fugitive buffer
-nnoremap <leader>gb :Gblame<CR>
-nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>gb :Git blame<CR>
+nnoremap <leader>gs :Git status<CR>
+nnoremap <leader>gc :Git commit<CR>
 nnoremap <leader>gp :Git push<CR>
 nnoremap <leader>gw :!git add . && git commit -m 'WIP' && git push<CR>
 
