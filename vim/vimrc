@@ -441,7 +441,7 @@ nnoremap <leader>pc :PyCoverageHighlight<CR>
 nnoremap <leader>pC :PyCoverageClear<CR>
 
 " shortcuts for git
-nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>gd :Gvdiffsplit<CR>
 nnoremap <leader>gD :diffoff!<CR><c-w>o<CR> " switch back to current file and closes fugitive buffer
 nnoremap <leader>gb :Git blame<CR>
 nnoremap <leader>gs :Git status<CR>
