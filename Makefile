@@ -6,15 +6,14 @@ PWD=`pwd`
 # konsole directory
 KONSOLE_DIR=~/.local/share/konsole
 
-all: bash curl zsh git tmux ssh konsole jshint vim
+all: bash curl zsh git tmux ssh konsole jshint vim msg
 
 bash:
 	@ln -fs ${PWD}/bash/bashrc ~/.bashrc
 	@ln -fs ${PWD}/bash/profile ~/.profile
 	@ln -fs ${PWD}/bash/bash_aliases ~/.bash_aliases
 	@ln -fs ${PWD}/bash/bash_colors ~/.bash_colors
-	@ln -fs ${PWD}/bash/git-prompt-colors.sh ~/.git-prompt-colors.sh
-	-@git clone https://github.com/agoconcept/bash-git-prompt.git ~/.bash-git-prompt
+	-@git clone https://github.com/agoconcept/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 
 curl:
 	-@sudo apt-get -y install curl
@@ -87,6 +86,10 @@ vim: fonts
 	-@sudo easy_install vimpdb
 	@vim -i NONE -c VundleInstall -c quitall
 	#-@cd ~/.vim/bundle/tern_for_vim/ && sudo npm install
+
+msg:
+	@echo "Please create a GitHub Personal Access token at https://github.com/settings/tokens and add it to ~/.github_token"
+	@echo "After that, it will be automatically sourced as GITHUB_TOKEN"
 
 .PHONY: all bash zsh vim git tmux ssh konsole jshint
 
