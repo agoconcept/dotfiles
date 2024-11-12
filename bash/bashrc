@@ -141,7 +141,7 @@ GITHUB_TOKEN=$(cat ~/.github_token)
 export TERM=screen-256color
 
 # Change directory colors for `ls`
-LS_COLORS="$LS_COLORS:di=00;44"
+LS_COLORS="$LS_COLORS:di=00;46"
 
 # Update PATH so that it also includes ~/bin/
 export PATH=$PATH:~/bin/
