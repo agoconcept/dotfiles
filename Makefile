@@ -6,7 +6,9 @@ PWD=`pwd`
 # konsole directory
 KONSOLE_DIR=~/.local/share/konsole
 
-all: bash curl zsh git tmux ssh konsole jshint vim msg
+all: bash curl zsh git tmux ssh vim jshint konsole msg
+
+console: bash curl zsh git tmux ssh vim msg
 
 bash:
 	@ln -fs ${PWD}/bash/bashrc ~/.bashrc
