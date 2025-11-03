@@ -92,7 +92,6 @@ Bundle 'scrooloose/syntastic'
 
 " Create tags automatically
 Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-easytags'
 
 " Show ctags tagbar
 Bundle 'majutsushi/tagbar'
@@ -129,9 +128,6 @@ Bundle 'christoomey/vim-tmux-navigator'
 
 " Trace syntax highlighting groups
 Bundle 'gerw/vim-HiLinkTrace'
-
-" Vdebug
-Bundle 'joonty/vdebug'
 
 " WakaTime
 if has('python')
