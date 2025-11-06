@@ -22,8 +22,8 @@ curl:
 
 zsh:
 	-@sudo apt-get -y install zsh
-	@ln -fs ${PWD}/zsh/zshrc ~/.zshrc
 	-@curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+	@ln -fs ${PWD}/zsh/zshrc ~/.zshrc
 
 fonts:
 	-@sudo apt-get -y install fontconfig
