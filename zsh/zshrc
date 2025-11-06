@@ -72,3 +72,5 @@ PROMPT=$'
 $(virtualenv_info)$ '
 RPROMPT='%F{222}[%D{%Y-%m-%d %H:%M:%S}]%{$reset_color%}'
 
+eval "$(starship init zsh)"
+
