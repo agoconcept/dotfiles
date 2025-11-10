@@ -51,7 +51,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:${HOME}/bin"
+export PATH="/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:${HOME}/bin:${HOME}/.local/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions
@@ -74,3 +74,6 @@ RPROMPT='%F{222}[%D{%Y-%m-%d %H:%M:%S}]%{$reset_color%}'
 
 eval "$(starship init zsh)"
 
+
+# ESC+Backspace to delete previous word
+bindkey '^[^?' backward-kill-word
