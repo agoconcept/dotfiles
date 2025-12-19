@@ -204,6 +204,7 @@ set nolist
 
 " Allow mouse support
 set mouse=a
+set ttymouse=xterm2
 
 " Backspace can delete indent, eol and line start
 set backspace=indent,eol,start
