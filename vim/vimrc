@@ -184,9 +184,9 @@ set wildmode=list:full
 " Don't show invisible characters by default
 set nolist
 
-" Allow mouse support
-set mouse=a
-set ttymouse=xterm2
+" Disable mouse support (conflicts with tmux)
+set mouse=
+" set ttymouse=xterm2
 
 " Backspace can delete indent, eol and line start
 set backspace=indent,eol,start
