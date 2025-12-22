@@ -109,5 +109,8 @@ id_dsa
 *.old
 *.orig
 
+# Vim plugins
+vim/plugged/
+
 # Powerline
 powerline/
