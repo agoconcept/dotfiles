@@ -6,7 +6,7 @@
     name = Santiago Gallego
 [include]
     path = ~/.gitconfig_template
-    # Delta config will be added here by install script if delta is available
+    path = ~/git/dotfiles/git/gitconfig_delta
 [alias]
     # Improved aliases
     st = status -sb
