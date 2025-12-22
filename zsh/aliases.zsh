@@ -12,8 +12,9 @@ alias egrep='egrep --color=auto'
 command -v bat > /dev/null && alias cat='bat'
 command -v rg > /dev/null && alias grep='rg'
 command -v fd > /dev/null && alias find='fd'
-command -v eza > /dev/null && alias ls='eza --icons'
-command -v eza > /dev/null && alias ll='eza -la --icons --git'
+command -v eza > /dev/null && alias l='eza --icons --group-directories-first'
+command -v eza > /dev/null && alias ll='eza -lag --icons --git --group-directories-first'
+command -v eza > /dev/null && alias la='eza -A --icons --group-directories-first'
 command -v eza > /dev/null && alias tree='eza --tree --icons'
 
 # Git aliases (complement to gitconfig)
