@@ -29,20 +29,20 @@ install_packages() {
                 echo -e "${YELLOW}Installing Homebrew...${NC}"
                 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
             fi
-            brew install zsh tmux git vim curl fontconfig git-delta
+            brew install zsh tmux git vim curl fontconfig git-delta bat ripgrep fd fzf eza
             ;;
         "linux")
             if command -v apt-get &> /dev/null; then
                 sudo apt-get update
-                sudo apt-get install -y zsh tmux git vim curl fontconfig
-                # Install delta via cargo or download binary
-                install_delta_linux
+                sudo apt-get install -y zsh tmux git vim curl fontconfig build-essential
+                # Install modern tools
+                install_modern_tools_linux
             elif command -v dnf &> /dev/null; then
-                sudo dnf install -y zsh tmux git vim curl fontconfig
-                install_delta_linux
+                sudo dnf install -y zsh tmux git vim curl fontconfig gcc
+                install_modern_tools_linux
             elif command -v pacman &> /dev/null; then
-                sudo pacman -S --noconfirm zsh tmux git vim curl fontconfig
-                install_delta_linux
+                sudo pacman -S --noconfirm zsh tmux git vim curl fontconfig base-devel
+                install_modern_tools_linux
             else
                 echo -e "${RED}Unsupported package manager${NC}"
                 exit 1
@@ -132,6 +132,20 @@ install_vim_plugins() {
     vim +PlugInstall +qall
 }
 
+# Install Tmux Plugin Manager
+install_tmux_plugins() {
+    if [[ ! -d ~/.tmux/plugins/tpm ]]; then
+        echo -e "${GREEN}Installing Tmux Plugin Manager...${NC}"
+        git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+        echo -e "${YELLOW}After tmux starts, press Ctrl-a + I to install plugins${NC}"
+    else
+        echo -e "${YELLOW}TPM already installed${NC}"
+    fi
+
+    echo -e "${GREEN}Tmux Plugin Manager ready!${NC}"
+    echo -e "${YELLOW}Restart tmux and press Ctrl-a + I to install Catppuccin theme${NC}"
+}
+
 # Install and configure Starship
 install_starship() {
     if ! command -v starship &> /dev/null; then
@@ -215,11 +229,27 @@ main() {
     echo -e "${GREEN}Setting up Vim...${NC}"
     install_vim_plugins
 
+    # Install tmux plugins
+    echo -e "${GREEN}Setting up Tmux...${NC}"
+    install_tmux_plugins
+
     echo -e "${GREEN}Dotfiles installation complete!${NC}"
-    echo -e "${YELLOW}Remember to:${NC}"
+    echo -e "${YELLOW}Next steps:${NC}"
     echo "1. Install a Nerd Font from https://www.nerdfonts.com/"
     echo "2. Configure your GitHub token in ~/.github_token"
     echo "3. Restart your terminal or run: source ~/.zshrc"
+    echo "4. In tmux, press Ctrl-a + I to install plugins and activate Catppuccin theme"
+    echo "5. For VS Code: cat $dotfiles_dir/vscode/extensions.txt | xargs -L 1 code --install-extension"
+    echo ""
+    echo -e "${GREEN}Modern CLI tools installed:${NC}"
+    command -v bat &> /dev/null && echo "  ✓ bat (better cat)"
+    command -v rg &> /dev/null && echo "  ✓ ripgrep (better grep)"
+    command -v fd &> /dev/null && echo "  ✓ fd (better find)"
+    command -v fzf &> /dev/null && echo "  ✓ fzf (fuzzy finder)"
+    command -v eza &> /dev/null && echo "  ✓ eza (better ls)"
+    command -v delta &> /dev/null && echo "  ✓ delta (better git diff)"
+    echo ""
+    echo -e "${GREEN}Enjoy your enhanced development environment! 🚀${NC}"
 }
 
 main "$@"

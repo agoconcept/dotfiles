@@ -1,0 +1,5 @@
+# Bat configuration - a modern cat replacement
+--theme="Catppuccin-mocha"
+--style="numbers,changes,header"
+--paging=auto
+--wrap=never

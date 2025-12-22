@@ -1,0 +1,41 @@
+# VS Code Extensions List
+# Install with: cat extensions.txt | xargs -L 1 code --install-extension
+
+# Theme and Icons
+catppuccin.catppuccin-vsc
+catppuccin.catppuccin-vsc-icons
+
+# Git
+eamodio.gitlens
+mhutchie.git-graph
+
+# Language Support
+ms-python.python
+ms-python.black-formatter
+ms-vscode.vscode-typescript-next
+bradlc.vscode-tailwindcss
+rust-lang.rust-analyzer
+golang.go
+ms-vscode.vscode-json
+
+# Formatting and Linting
+esbenp.prettier-vscode
+ms-vscode.vscode-eslint
+davidanson.vscode-markdownlint
+editorconfig.editorconfig
+
+# Productivity
+ms-vscode.vscode-todo-highlight
+streetsidesoftware.code-spell-checker
+formulahendry.auto-rename-tag
+christian-kohler.path-intellisense
+ms-vscode.vscode-json
+
+# Docker and DevOps
+ms-azuretools.vscode-docker
+ms-kubernetes-tools.vscode-kubernetes-tools
+hashicorp.terraform
+
+# Remote Development
+ms-vscode-remote.remote-ssh
+ms-vscode-remote.remote-containers

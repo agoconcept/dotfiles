@@ -50,15 +50,12 @@ setopt SHARE_HISTORY
 plugins=(
   git
   tmux
-  vi-mode
   web-search
 )
 
 # Add optional plugins if they exist
 [[ -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ]] && plugins+=(zsh-autosuggestions)
 [[ -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ]] && plugins+=(zsh-syntax-highlighting)
-
-source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export PATH="/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:${HOME}/bin:${HOME}/.local/bin"
@@ -75,4 +72,19 @@ bindkey '^[^?' backward-kill-word
 
 # Initialize Starship prompt (replaces default Oh My Zsh theme)
 eval "$(starship init zsh)"
+
+source $ZSH/oh-my-zsh.sh
+
+# Get dotfiles directory dynamically
+DOTFILES_DIR="${${(%):-%x}:A:h}/.."
+[[ -z "$DOTFILES_DIR" ]] && DOTFILES_DIR="$HOME/.dotfiles"
+
+# Load custom aliases
+[[ -f "$DOTFILES_DIR/zsh/aliases.zsh" ]] && source "$DOTFILES_DIR/zsh/aliases.zsh"
+
+# Load FZF configuration
+[[ -f "$DOTFILES_DIR/fzf/.fzf.zsh" ]] && source "$DOTFILES_DIR/fzf/.fzf.zsh"
+
+# Set RIPGREP_CONFIG_PATH for ripgrep
+export RIPGREP_CONFIG_PATH="$DOTFILES_DIR/ripgrep/.ripgreprc"
 

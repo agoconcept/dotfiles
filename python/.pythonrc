@@ -1,0 +1,30 @@
+# Python startup file
+import os
+import sys
+import readline
+import rlcompleter
+
+# Enable tab completion
+readline.parse_and_bind("tab: complete")
+
+# History file
+histfile = os.path.join(os.path.expanduser("~"), ".python_history")
+try:
+    readline.read_history_file(histfile)
+    readline.set_history_length(1000)
+except FileNotFoundError:
+    pass
+
+import atexit
+atexit.register(readline.write_history_file, histfile)
+
+# Pretty printing
+def pp(obj):
+    import pprint
+    pprint.pprint(obj)
+
+# Clear screen
+def clear():
+    os.system('clear' if os.name == 'posix' else 'cls')
+
+print("Python enhanced REPL loaded. Use pp(obj) for pretty printing, clear() to clear screen.")

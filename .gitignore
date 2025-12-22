@@ -1,11 +1,4 @@
-# Vim temporary files
-vim/tmp/
-vim/.netrwhist
-vim/plugged/
-vim/bundle/
-
-# Backup files
-*.backup.*
+# Global gitignore patterns
 
 # OS generated files
 .DS_Store
@@ -15,14 +8,106 @@ vim/bundle/
 .Trashes
 ehthumbs.db
 Thumbs.db
+Desktop.ini
 
-# IDE files
+# Editor and IDE files
 .vscode/
 .idea/
+*.swp
+*.swo
+*~
+.vim/
+.netrwhist
 
-# Local configuration overrides
-*local*
-*private*
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.cache
+.sass-cache/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn-integrity
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Rust
+target/
+Cargo.lock
+
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+go.work
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+hs_err_pid*
+
+# Docker
+.dockerignore
+
+# Secrets and credentials
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.crt
+id_rsa
+id_dsa
+*.p12
+*.pfx
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
 
 # Powerline
 powerline/

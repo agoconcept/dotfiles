@@ -1,0 +1,48 @@
+# Homebrew Bundle file for macOS
+# Install with: brew bundle --file=<path-to-dotfiles>/homebrew/Brewfile
+
+# Taps
+tap "homebrew/bundle"
+tap "homebrew/cask-fonts"
+
+# Essential CLI tools
+brew "zsh"
+brew "tmux"
+brew "git"
+brew "vim"
+brew "neovim"
+brew "curl"
+brew "wget"
+brew "fontconfig"
+
+# Modern CLI replacements
+brew "git-delta"
+brew "bat"
+brew "ripgrep"
+brew "fd"
+brew "fzf"
+brew "eza"
+brew "htop"
+brew "tree"
+brew "jq"
+brew "yq"
+
+# Development tools
+brew "node"
+brew "python@3.11"
+brew "rust"
+brew "go"
+brew "docker"
+brew "docker-compose"
+brew "kubectl"
+brew "terraform"
+
+# Fonts
+cask "font-fira-code-nerd-font"
+cask "font-jetbrains-mono-nerd-font"
+cask "font-sauce-code-pro-nerd-font"
+
+# Applications (optional)
+# cask "visual-studio-code"
+# cask "iterm2"
+# cask "docker"

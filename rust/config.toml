@@ -1,0 +1,14 @@
+# Cargo configuration
+[build]
+jobs = 4
+
+[cargo-new]
+name = "Santiago Gallego"
+email = "santiago.gallego.rodrigo@gmail.com"
+
+[net]
+retry = 2
+
+[term]
+verbose = false
+color = 'auto'
