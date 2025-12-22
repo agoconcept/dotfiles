@@ -163,8 +163,9 @@ show_milliseconds = true
 format = " in $duration "
 style = "bg:lavender"
 disabled = false
-show_notifications = true
-min_time_to_notify = 45000
+show_notifications = false  # Disabled to prevent hanging in MacOS
+min_time_to_notify = 60000
+min_time = 1000  # Only show for commands taking >1s
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
