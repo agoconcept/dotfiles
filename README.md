@@ -19,7 +19,7 @@ A modern, cross-platform dotfiles configuration for developers that works seamle
 
 ### One-line installation:
 ```bash
-git clone https://github.com/agoconcept/dotfiles.git ~/.dotfiles && cd ~/.dotfiles && chmod +x install.sh && ./install.sh
+git clone https://github.com/agoconcept/dotfiles.git ~/.dotfiles && cd ~/.dotfiles && ./install.sh
 ```
 
 ### Step-by-step installation:
@@ -27,9 +27,6 @@ git clone https://github.com/agoconcept/dotfiles.git ~/.dotfiles && cd ~/.dotfil
 # Clone the repository
 git clone https://github.com/agoconcept/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-
-# Make the install script executable
-chmod +x install.sh
 
 # Run the installation
 ./install.sh
@@ -70,10 +67,7 @@ If you prefer to install components individually or the automatic script fails:
 git clone https://github.com/agoconcept/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 
-# Use the legacy Makefile (Ubuntu/Debian only)
-make
-
-# Or create symlinks manually
+# Create symlinks manually
 ln -sf ~/.dotfiles/zsh/zshrc ~/.zshrc
 ln -sf ~/.dotfiles/git/gitconfig ~/.gitconfig
 ln -sf ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
