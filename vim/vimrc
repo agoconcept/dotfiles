@@ -1,154 +1,136 @@
-" Vundle configuration
-set nocompatible               " be iMproved
-filetype off                   " required!
+" Auto-install vim-plug if not present
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
-
-" My Bundles here:
-"
-" original repos on github
+" Plugin management with vim-plug
+call plug#begin('~/.vim/plugged')
 
 " Molokai colorscheme
-Bundle 'tomasr/molokai'
+Plug 'tomasr/molokai'
 
 " Airline/powerline
-Bundle 'vim-airline/vim-airline'
-Bundle 'Lokaltog/powerline-fonts'
-Bundle 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'Lokaltog/powerline-fonts'
+Plug 'vim-airline/vim-airline-themes'
 
 " Ctrl-P
-Bundle 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim'
 
 " supertab
-Bundle 'ervandew/supertab'
-
-" Snippets handling
-"Bundle 'SirVer/ultisnips'
-"Bundle 'agoconcept/vim-snippets'
+Plug 'ervandew/supertab'
 
 " Auto-pairs
-Bundle 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 
 " Comments handling
-Bundle 'tomtom/tcomment_vim'
+Plug 'tomtom/tcomment_vim'
 
 " Match-it
-Bundle 'vim-scripts/matchit.zip'
+Plug 'vim-scripts/matchit.zip'
 
 " Surround
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 
 " Select blocks
-Bundle 'michaeljsmith/vim-indent-object'
+Plug 'michaeljsmith/vim-indent-object'
 
 " Blockit
-Bundle 'sk1418/blockit'
+Plug 'sk1418/blockit'
 
 " Select regions
-Bundle 'terryma/vim-expand-region'
+Plug 'terryma/vim-expand-region'
 
 " ack-grep
-Bundle 'mileszs/ack.vim'
+Plug 'mileszs/ack.vim'
 
 " ag
-Bundle 'rking/ag.vim'
+Plug 'rking/ag.vim'
 
 " Show number of results
-Bundle 'henrik/vim-indexed-search'
+Plug 'henrik/vim-indexed-search'
 
 " Show marks
-Bundle 'kshenoy/vim-signature'
+Plug 'kshenoy/vim-signature'
 
 " gundo
 if version >= 703
-  Bundle 'sjl/gundo.vim'
+  Plug 'sjl/gundo.vim'
 endif
 
 " netrw
-Bundle 'vim-scripts/netrw.vim'
+Plug 'vim-scripts/netrw.vim'
 
 " vinegar
-Bundle 'tpope/vim-vinegar'
+Plug 'tpope/vim-vinegar'
 
 " tasklist
-Bundle 'vim-scripts/TaskList.vim'
+Plug 'vim-scripts/TaskList.vim'
 
 " Git support
-Bundle 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
 " Show differences from git repository
 if version >= 703
-  Bundle 'airblade/vim-gitgutter'
+  Plug 'airblade/vim-gitgutter'
 endif
 
 " Syntax checking
-Bundle 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 
 " Create tags automatically
-Bundle 'xolox/vim-misc'
+Plug 'xolox/vim-misc'
 
 " Show ctags tagbar
-Bundle 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 
 " Autocomplete C/C++ code
-Bundle 'Rip-Rip/clang_complete'
+Plug 'Rip-Rip/clang_complete'
 
 " Autocomplete for Python
-if has('python')
-  Bundle 'davidhalter/jedi-vim'
+if has('python') || has('python3')
+  Plug 'davidhalter/jedi-vim'
 endif
 
 " PEP8 for Python
-if has('python')
-  Bundle 'nvie/vim-flake8'
+if has('python') || has('python3')
+  Plug 'nvie/vim-flake8'
 endif
 
 " Sets up node.js configuration
-Bundle 'moll/vim-node'
-
-" Improve javascript syntax highlight
-"Bundle 'jelera/vim-javascript-syntax'
-"Bundle 'digitaltoad/vim-jade'
+Plug 'moll/vim-node'
 
 " Improve JSON highlighting
-Bundle 'elzr/vim-json'
+Plug 'elzr/vim-json'
 
 " Plugins for handling puppet files
-Bundle 'rodjek/vim-puppet'
-Bundle 'godlygeek/tabular'
+Plug 'rodjek/vim-puppet'
+Plug 'godlygeek/tabular'
 
 " Navigate tmux and vim panes seamlessly
-Bundle 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator'
 
 " Trace syntax highlighting groups
-Bundle 'gerw/vim-HiLinkTrace'
+Plug 'gerw/vim-HiLinkTrace'
 
 " WakaTime
-if has('python')
-  Bundle 'wakatime/vim-wakatime'
+if has('python') || has('python3')
+  Plug 'wakatime/vim-wakatime'
 endif
 
-" Github repos of the user 'vim-scripts'
-" => can omit the username part
-"Bundle 'taglist.vim'
-" ...
 " Python coverage module
-Bundle 'py-coverage'
+Plug 'alfredodeza/coveragepy.vim'
 
 " Alda music composer syntax
-Bundle 'daveyarwood/vim-alda'
+Plug 'daveyarwood/vim-alda'
 
-" non github repos
-"Bundle 'git://git.wincent.com/command-t.git'
-" ...
+call plug#end()
 
-filetype plugin indent on     " required!
+" Enable filetype detection and plugins
+filetype plugin indent on
 
 " Enable syntax highlighting
 syntax on

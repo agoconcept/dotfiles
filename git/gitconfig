@@ -6,28 +6,65 @@
     name = Santiago Gallego
 [include]
     path = ~/.gitconfig_template
+    # Delta config will be added here by install script if delta is available
 [alias]
-    e = !vim $(git status --porcelain | awk {'print $2'})
-    d = difftool
-    dn = difftool --name-only
-    m = difftool --tool=meld
-    b = log --graph --simplify-by-decoration --pretty=format:'%d' --all
+    # Improved aliases
+    st = status -sb
+    co = checkout
+    br = branch
+    ci = commit
+    ca = commit -a
+    cm = commit -m
+    cam = commit -am
+
+    # Log aliases
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     ll = log --graph --full-history --all --color --pretty=format:'%C(red)%h%x09%C(green)%d%C(white) %s %C(yellow)(%an)%Creset'
     ln = log --name-status --oneline
+
+    # Diff aliases
+    d = diff             # Use git diff with delta pager
+    dt = difftool        # Use difftool (vimdiff) for side-by-side editing
+    dn = diff --name-only # Show only filenames
+
+    # Branch management
+    b = log --graph --simplify-by-decoration --pretty=format:'%d' --all
     l = !git ll --simplify-by-decoration
+
+    # Utility aliases
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    visual = !gitk
+
+    # Push aliases
     pm = push origin HEAD:refs/for/master
     pp = push origin HEAD:refs/for/production
-    fpush = push --force origin
+    fpush = push --force-with-lease origin
+
+    # Sync with upstream
     pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
+
+    # Interactive rebase
     s = !git rebase -i $(git merge-base HEAD master)
+
+    # Edit conflicted files
+    e = !vim $(git status --porcelain | awk {'print $2'})
+
 [core]
-    excludesfile = /home/santi/.gitignore_global
+    excludesfile = ~/.gitignore_global
     autocrlf = false
+    editor = vim
 [credential]
     helper = cache --timeout=3600
+[pull]
+    rebase = true
+[push]
+    default = simple
+    autoSetupRemote = true
 [diff]
     tool = vimdiff
 [difftool]
     prompt = false
 [merge]
-    tool = vimdiff
+    conflictstyle = diff3
+    tool = delta
