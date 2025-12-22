@@ -50,6 +50,7 @@ setopt SHARE_HISTORY
 plugins=(
   git
   tmux
+  vi-mode
   web-search
 )
 
