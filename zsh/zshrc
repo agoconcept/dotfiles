@@ -71,10 +71,10 @@ fi
 # ESC+Backspace to delete previous word
 bindkey '^[^?' backward-kill-word
 
+source $ZSH/oh-my-zsh.sh
+
 # Initialize Starship prompt (replaces default Oh My Zsh theme)
 eval "$(starship init zsh)"
-
-source $ZSH/oh-my-zsh.sh
 
 # Get dotfiles directory dynamically
 DOTFILES_DIR="${${(%):-%x}:A:h}/.."
