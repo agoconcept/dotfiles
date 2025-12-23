@@ -1,6 +1,12 @@
 # Modern shell aliases
 # Better defaults
-alias ls='ls --color=auto'
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # macOS - use gls from coreutils for GNU ls features
+    alias ls='gls --color=auto --group-directories-first'
+else
+    # Linux - use standard ls
+    alias ls='ls --color=auto'
+fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
