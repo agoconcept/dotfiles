@@ -8,6 +8,59 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
+# Install eza from binary
+install_eza_linux() {
+    if command -v eza &> /dev/null; then
+        return
+    fi
+
+    echo -e "${GREEN}Installing eza...${NC}"
+    
+    if command -v apt-get &> /dev/null; then
+        sudo mkdir -p /etc/apt/keyrings
+        wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
+        echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
+        sudo apt update
+        sudo apt install -y eza
+    elif command -v dnf &> /dev/null; then
+        sudo dnf install -y eza
+    elif command -v pacman &> /dev/null; then
+        sudo pacman -S --noconfirm eza
+    else
+        # Fallback to binary download
+        cd /tmp
+        wget -q https://github.com/eza-community/eza/releases/latest/download/eza_x86_64-unknown-linux-gnu.tar.gz
+        tar -xzf eza_x86_64-unknown-linux-gnu.tar.gz
+        sudo mv eza /usr/local/bin/
+        rm eza_x86_64-unknown-linux-gnu.tar.gz
+        cd -
+    fi
+}
+
+# Install modern CLI tools on Linux
+install_modern_tools_linux() {
+    echo -e "${GREEN}Installing modern CLI tools...${NC}"
+
+    # Try to install from package manager first
+    if command -v apt-get &> /dev/null; then
+        sudo apt-get install -y bat ripgrep fd-find fzf 2>/dev/null || true
+        # Create bat symlink if batcat exists (Ubuntu/Debian naming)
+        [[ -x /usr/bin/batcat ]] && sudo ln -sf /usr/bin/batcat /usr/local/bin/bat
+        # Create fd symlink if fdfind exists (Ubuntu/Debian naming)
+        [[ -x /usr/bin/fdfind ]] && sudo ln -sf /usr/bin/fdfind /usr/local/bin/fd
+    elif command -v dnf &> /dev/null; then
+        sudo dnf install -y bat ripgrep fd-find fzf 2>/dev/null || true
+    elif command -v pacman &> /dev/null; then
+        sudo pacman -S --noconfirm bat ripgrep fd fzf 2>/dev/null || true
+    fi
+
+    # Install eza from binary
+    install_eza_linux
+
+    # Install delta
+    install_delta_linux
+}
+
 # Detect OS
 detect_os() {
     if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -57,24 +110,22 @@ install_packages() {
 
 # Install delta on Linux systems
 install_delta_linux() {
-    if command -v cargo &> /dev/null; then
-        echo -e "${GREEN}Installing delta via cargo...${NC}"
-        cargo install git-delta
-    else
-        echo -e "${GREEN}Installing delta via binary download...${NC}"
-        # Get latest release URL
-        local delta_url=$(curl -s https://api.github.com/repos/dandavison/delta/releases/latest | grep "browser_download_url.*x86_64-unknown-linux-gnu.tar.gz" | cut -d '"' -f 4)
-        if [[ -n "$delta_url" ]]; then
-            cd /tmp
-            curl -L "$delta_url" -o delta.tar.gz
-            tar -xzf delta.tar.gz
-            sudo mv delta-*/delta /usr/local/bin/
-            rm -rf delta*
-            cd -
-        else
-            echo -e "${YELLOW}Could not download delta binary. Install manually with: cargo install git-delta${NC}"
-        fi
+    if command -v delta &> /dev/null; then
+        return
     fi
+
+    echo -e "${GREEN}Installing delta...${NC}"
+    cd /tmp
+    local delta_url=$(curl -s https://api.github.com/repos/dandavison/delta/releases/latest | grep "browser_download_url.*x86_64-unknown-linux-gnu.tar.gz" | cut -d '"' -f 4)
+    if [[ -n "$delta_url" ]]; then
+        curl -L "$delta_url" -o delta.tar.gz
+        tar -xzf delta.tar.gz
+        sudo mv delta-*/delta /usr/local/bin/
+        rm -rf delta*
+    else
+        echo -e "${YELLOW}Could not download delta binary${NC}"
+    fi
+    cd -
 }
 
 # Create symlinks safely
