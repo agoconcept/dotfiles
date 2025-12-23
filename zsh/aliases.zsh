@@ -4,8 +4,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     # macOS - use gls from coreutils for GNU ls features
     alias ls='gls --color=auto --group-directories-first'
 else
-    # Linux - use standard ls
-    alias ls='ls --color=auto'
+    # Linux - use standard ls with GNU coreutils
+    alias ls='ls --color=auto --group-directories-first'
 fi
 alias ll='ls -alF'
 alias la='ls -A'
