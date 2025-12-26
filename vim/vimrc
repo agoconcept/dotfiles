@@ -58,9 +58,6 @@ if version >= 703
   Plug 'sjl/gundo.vim'
 endif
 
-" netrw
-Plug 'vim-scripts/netrw.vim'
-
 " vinegar
 Plug 'tpope/vim-vinegar'
 
