@@ -16,9 +16,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'Lokaltog/powerline-fonts'
 Plug 'vim-airline/vim-airline-themes'
 
-" Ctrl-P
-Plug 'kien/ctrlp.vim'
-
 " supertab
 Plug 'ervandew/supertab'
 
@@ -77,9 +74,6 @@ Plug 'tpope/vim-fugitive'
 if version >= 703
   Plug 'airblade/vim-gitgutter'
 endif
-
-" Syntax checking
-Plug 'scrooloose/syntastic'
 
 " Create tags automatically
 Plug 'xolox/vim-misc'
@@ -369,8 +363,8 @@ highlight MatchParen cterm=none ctermbg=250 ctermfg=235
 
 """ NAVIGATION
 " Open and source vimrc easily
-nnoremap <leader>c :e ~/git/dotfiles/vim/vimrc<CR>
-nnoremap <leader>s :source ~/git/dotfiles/vim/vimrc<CR>
+nnoremap <leader>c :e $MYVIMRC<CR>
+nnoremap <leader>s :source $MYVIMRC<CR>
 
 " Jump to the end of the text just pasted
 vnoremap <silent> y y`]
