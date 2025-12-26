@@ -189,7 +189,11 @@ google() {
     for term in $@; do
         search="$search%20$term"
     done
-    xdg-open "http://www.google.com/search?q=$search"
+    if [[ "$(uname)" == "Darwin" ]]; then
+        open "http://www.google.com/search?q=$search"
+    else
+        xdg-open "http://www.google.com/search?q=$search"
+    fi
 }
 
 # Go to the root git directory for the current project
