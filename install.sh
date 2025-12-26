@@ -82,7 +82,7 @@ install_packages() {
                 echo -e "${YELLOW}Installing Homebrew...${NC}"
                 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
             fi
-            brew install zsh tmux git vim curl fontconfig git-delta bat ripgrep fd fzf eza
+            brew install zsh tmux git vim curl fontconfig git-delta bat ripgrep fd fzf eza coreutils
             ;;
         "linux")
             if command -v apt-get &> /dev/null; then
