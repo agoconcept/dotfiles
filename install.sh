@@ -268,8 +268,7 @@ main() {
     # Setup git with conditional delta support
     setup_git_config
 
-    # Setup git with conditional delta support
-    setup_git_config
+    # Create symlinks
     create_symlink "$dotfiles_dir/tmux/tmux.conf" ~/.tmux.conf
     create_symlink "$dotfiles_dir/ssh/config" ~/.ssh/config
     create_symlink "$dotfiles_dir/vim" ~/.vim
