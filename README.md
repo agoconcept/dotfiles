@@ -96,12 +96,7 @@ ln -sf ~/.dotfiles/vim/vimrc ~/.vimrc
 
 ### Optional Steps:
 
-4. **Configure GitHub token** (for some git operations):
-   ```bash
-   echo "your_github_token" > ~/.github_token
-   ```
-
-5. **Install additional development tools**:
+4. **Install additional development tools**:
    ```bash
    # FZF (fuzzy finder) - if not auto-installed
    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf

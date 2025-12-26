@@ -134,8 +134,6 @@ if [ -f /etc/bash_completion.d/git ] && ! shopt -oq posix; then
     source /etc/bash_completion.d/git
 fi
 
-GITHUB_TOKEN=$(cat ~/.github_token)
-
 # Needed for tmux to render all colors correctly
 # Only set it after ssh'ing to remote hosts
 export TERM=screen-256color
