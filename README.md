@@ -190,10 +190,13 @@ After installation, install tmux plugins:
 
 ### Modern CLI Aliases
 The configuration includes smart aliases that use modern tools when available:
-- `cat` → `bat` (if installed)
-- `grep` → `ripgrep` (if installed)
-- `find` → `fd` (if installed)
-- `ls` → `eza` (if installed)
+- `cat` → `acat` (bat, if installed)
+- `grep` → `agrep` (ripgrep, if installed)
+- `find` → `afind` (fd, if installed)
+- `ls` → `al`, `all`, `ala` (eza, if installed)
+- `tree` → `atree` (eza, if installed)
+
+Original commands (`cat`, `grep`, `find`, `ls`, etc.) remain available.
 
 ## Customization
 

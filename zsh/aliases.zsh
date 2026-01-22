@@ -14,14 +14,14 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-# Modern replacements (if available)
-command -v bat > /dev/null && alias cat='bat'
-command -v rg > /dev/null && alias grep='rg'
-command -v fd > /dev/null && alias find='fd'
-command -v eza > /dev/null && alias l='eza --icons --group-directories-first'
-command -v eza > /dev/null && alias ll='eza -lag --icons --git --group-directories-first'
-command -v eza > /dev/null && alias la='eza -A --icons --group-directories-first'
-command -v eza > /dev/null && alias tree='eza --tree --icons'
+# Modern replacements (if available) - prefixed with 'a' to keep originals
+command -v bat > /dev/null && alias acat='bat'
+command -v rg > /dev/null && alias agrep='rg'
+command -v fd > /dev/null && alias afind='fd'
+command -v eza > /dev/null && alias al='eza --icons --group-directories-first'
+command -v eza > /dev/null && alias all='eza -lag --icons --git --group-directories-first'
+command -v eza > /dev/null && alias ala='eza -A --icons --group-directories-first'
+command -v eza > /dev/null && alias atree='eza --tree --icons'
 
 # Git aliases (complement to gitconfig)
 alias g='git'
