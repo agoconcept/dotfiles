@@ -28,11 +28,18 @@ install_eza_linux() {
         sudo pacman -S --noconfirm eza
     else
         # Fallback to binary download
+        local eza_arch
+        case "$(uname -m)" in
+            x86_64)  eza_arch="x86_64-unknown-linux-gnu" ;;
+            aarch64) eza_arch="aarch64-unknown-linux-gnu" ;;
+            armv7l)  eza_arch="armv7-unknown-linux-gnueabihf" ;;
+            *)       echo -e "${YELLOW}Unsupported architecture for eza: $(uname -m)${NC}"; return ;;
+        esac
         cd /tmp
-        wget -q https://github.com/eza-community/eza/releases/latest/download/eza_x86_64-unknown-linux-gnu.tar.gz
-        tar -xzf eza_x86_64-unknown-linux-gnu.tar.gz
+        wget -q "https://github.com/eza-community/eza/releases/latest/download/eza_${eza_arch}.tar.gz"
+        tar -xzf "eza_${eza_arch}.tar.gz"
         sudo mv eza /usr/local/bin/
-        rm eza_x86_64-unknown-linux-gnu.tar.gz
+        rm "eza_${eza_arch}.tar.gz"
         cd -
     fi
 }
@@ -43,15 +50,15 @@ install_modern_tools_linux() {
 
     # Try to install from package manager first
     if command -v apt-get &> /dev/null; then
-        sudo apt-get install -y bat ripgrep fd-find fzf 2>/dev/null || true
+        sudo apt-get install -y bat ripgrep fd-find fzf lazygit 2>/dev/null || true
         # Create bat symlink if batcat exists (Ubuntu/Debian naming)
         [[ -x /usr/bin/batcat ]] && sudo ln -sf /usr/bin/batcat /usr/local/bin/bat
         # Create fd symlink if fdfind exists (Ubuntu/Debian naming)
         [[ -x /usr/bin/fdfind ]] && sudo ln -sf /usr/bin/fdfind /usr/local/bin/fd
     elif command -v dnf &> /dev/null; then
-        sudo dnf install -y bat ripgrep fd-find fzf 2>/dev/null || true
+        sudo dnf install -y bat ripgrep fd-find fzf lazygit 2>/dev/null || true
     elif command -v pacman &> /dev/null; then
-        sudo pacman -S --noconfirm bat ripgrep fd fzf 2>/dev/null || true
+        sudo pacman -S --noconfirm bat ripgrep fd fzf lazygit 2>/dev/null || true
     fi
 
     # Install eza from binary
@@ -82,7 +89,7 @@ install_packages() {
                 echo -e "${YELLOW}Installing Homebrew...${NC}"
                 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
             fi
-            brew install zsh tmux git vim curl fontconfig git-delta bat ripgrep fd fzf eza coreutils
+            brew install zsh tmux git vim curl fontconfig git-delta bat ripgrep fd fzf eza coreutils lazygit lazygit
             ;;
         "linux")
             if command -v apt-get &> /dev/null; then
@@ -116,7 +123,14 @@ install_delta_linux() {
 
     echo -e "${GREEN}Installing delta...${NC}"
     cd /tmp
-    local delta_url=$(curl -s https://api.github.com/repos/dandavison/delta/releases/latest | grep "browser_download_url.*x86_64-unknown-linux-gnu.tar.gz" | cut -d '"' -f 4)
+    local arch_pattern
+    case "$(uname -m)" in
+        x86_64)  arch_pattern="x86_64-unknown-linux-gnu" ;;
+        aarch64) arch_pattern="aarch64-unknown-linux-gnu" ;;
+        armv7l)  arch_pattern="arm-unknown-linux-gnueabihf" ;;
+        *)       echo -e "${YELLOW}Unsupported architecture: $(uname -m)${NC}"; return ;;
+    esac
+    local delta_url=$(curl -s https://api.github.com/repos/dandavison/delta/releases/latest | grep "browser_download_url.*${arch_pattern}.tar.gz" | cut -d '"' -f 4)
     if [[ -n "$delta_url" ]]; then
         curl -L "$delta_url" -o delta.tar.gz
         tar -xzf delta.tar.gz
@@ -224,19 +238,7 @@ setup_git_config() {
     create_symlink "$dotfiles_dir/git/gitconfig" ~/.gitconfig
     create_symlink "$dotfiles_dir/git/gitconfig_template" ~/.gitconfig_template
     create_symlink "$dotfiles_dir/git/git_template" ~/.git_template
-
-    # Check if delta is installed and include delta config
-    if command -v delta &> /dev/null; then
-        echo -e "${GREEN}Delta found, enabling enhanced git diff...${NC}"
-        # Edit the source file directly since ~/.gitconfig is a symlink
-        sed -i.bak 's|# Delta config will be added here by install script if delta is available|path = '"$dotfiles_dir"'/git/gitconfig_delta|' "$dotfiles_dir/git/gitconfig"
-        rm "$dotfiles_dir/git/gitconfig.bak" 2>/dev/null || true
-    else
-        echo -e "${YELLOW}Delta installation failed, using standard git diff${NC}"
-        # Remove the comment line if delta is not available
-        sed -i.bak '/# Delta config will be added here by install script if delta is available/d' "$dotfiles_dir/git/gitconfig"
-        rm "$dotfiles_dir/git/gitconfig.bak" 2>/dev/null || true
-    fi
+    create_symlink "$dotfiles_dir/git/gitconfig_delta" ~/.gitconfig_delta
 }
 
 main() {
@@ -297,6 +299,7 @@ main() {
     command -v fzf &> /dev/null && echo "  ✓ fzf (fuzzy finder)"
     command -v eza &> /dev/null && echo "  ✓ eza (better ls) - use: al, all, ala, atree"
     command -v delta &> /dev/null && echo "  ✓ delta (better git diff)"
+    command -v lazygit &> /dev/null && echo "  ✓ lazygit (terminal UI for git)"
     echo ""
     echo -e "${GREEN}Enjoy your enhanced development environment! 🚀${NC}"
 }
