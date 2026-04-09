@@ -67,5 +67,8 @@ alias ....='cd ../../..'
 alias ~='cd ~'
 alias -- -='cd -'
 
+# Kiro
+alias kiro="kiro-cli --tui"
+
 # Reload shell
 alias reload='source ~/.zshrc'
