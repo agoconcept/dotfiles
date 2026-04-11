@@ -4,6 +4,7 @@ format = """
 [](red)\
 $os\
 $username\
+$hostname\
 [](bg:peach fg:red)\
 $directory\
 [](bg:yellow fg:peach)\
@@ -61,6 +62,12 @@ show_always = true
 style_user = "bg:red fg:crust"
 style_root = "bg:red fg:crust"
 format = '[ $user]($style)'
+
+[hostname]
+ssh_only = false
+format =  "[@$hostname ]($style)"
+style = "bg:red fg:crust"
+disabled = false
 
 [directory]
 style = "bg:peach fg:crust"
@@ -278,3 +285,4 @@ surface0 = "#363a4f"
 base = "#24273a"
 mantle = "#1e2030"
 crust = "#181926"
+

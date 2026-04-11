@@ -223,14 +223,9 @@ install_starship() {
         fi
     fi
 
-    # Set the Catppuccin Powerline preset
-    if command -v starship &> /dev/null; then
-        echo -e "${GREEN}Setting Catppuccin Powerline preset...${NC}"
-        starship preset catppuccin-powerline -o ~/.config/starship.toml
-    else
-        echo -e "${YELLOW}Starship not found in PATH, using custom config...${NC}"
-        create_symlink "$dotfiles_dir/starship/starship.toml" ~/.config/starship.toml
-    fi
+    # Create symlink to the Catppuccin Powerline starship configuration
+    echo -e "${GREEN}Creating custom starship config...${NC}"
+    create_symlink "$dotfiles_dir/starship/starship.toml" ~/.config/starship.toml
 }
 
 # Setup git configuration
