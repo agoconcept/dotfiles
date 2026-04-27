@@ -1,3 +1,6 @@
+# Kiro CLI pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -59,9 +62,7 @@ plugins=(
 [[ -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ]] && plugins+=(zsh-syntax-highlighting)
 
 # User configuration
-export PATH="/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
-export PATH="$PATH:/mnt/c/Users/egalsan/AppData/Local/Programs/Microsoft VS Code/bin"
-export PATH="$PATH:${HOME}/bin:${HOME}/.local/bin"
+export PATH="/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:${HOME}/bin:${HOME}/.local/bin:$PATH"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -91,3 +92,15 @@ DOTFILES_DIR="${${(%):-%x}:A:h}/.."
 # Set RIPGREP_CONFIG_PATH for ripgrep
 export RIPGREP_CONFIG_PATH="$DOTFILES_DIR/ripgrep/.ripgreprc"
 
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/ago/.lmstudio/bin"
+# End of LM Studio CLI section
+
+# Kiro CLI post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+# Added by Antigravity
+export PATH="/Users/ago/.antigravity/antigravity/bin:$PATH"

@@ -49,3 +49,8 @@ vdebug() {
     python -S ~/.vdebug/Komodo-PythonRemoteDebugging-8.5.3-83298-linux-x86_64/pydbgp -d localhost:9000 $*
 }
 
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/ago/.lmstudio/bin"
+# End of LM Studio CLI section
+

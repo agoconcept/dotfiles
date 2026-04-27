@@ -204,3 +204,8 @@ gitcd() {
 # Support ANSI colors
 LESS=-R
 
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/ago/.lmstudio/bin"
+# End of LM Studio CLI section
+
